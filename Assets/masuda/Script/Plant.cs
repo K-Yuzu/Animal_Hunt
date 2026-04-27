@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject PlantText;
+    private bool isPlayerNearby = false;
+
+    private void Start()
     {
-        
+        PlantText.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

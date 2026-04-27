@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class Camera : MonoBehaviour
+public class Camera1 : MonoBehaviour
 {
     [SerializeField] Transform playerTr;
     [SerializeField] Vector2 cameraMaxPos = new Vector2(5, 5);//âEÇ∆è„ÇÃå¿äEì_
