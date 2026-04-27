@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - NPC
   - Plant
+  - Ladder
   layers:
   - Default
   - TransparentFX
