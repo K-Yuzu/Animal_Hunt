@@ -1,15 +1,13 @@
+
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using UnityEngine.Rendering;
+
 
 public class ioka_Player : MonoBehaviour
 {
-   
-
+    Rigidbody2D rb;
     private void Start()
     {
-
+       rb = GetComponent<Rigidbody2D>();
     }
 
    private void Update()
@@ -28,38 +26,41 @@ public class ioka_Player : MonoBehaviour
             pos.x -= 0.01f;
             transform.position = pos;
         }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            Vector2 pos = transform.position;
-            pos.y += 0.01f;
-            transform.position = pos;
-        }
-        Ladder();
+      
+        
+        
     }
-    void Ladder()
+
+    private void OnTriggerStay2D(Collider2D other)
     {
-        void OnCollisionEnter(Collision collision)
+        rb.gravityScale = 0.0f;
+        Debug.Log("TriggeríÜ");
+        if (other.CompareTag("Ladder"))
         {
-
-
-            if (Input.GetKey(KeyCode.W) && collision.gameObject.CompareTag("Ladder"))
+            Debug.Log("Ladderê⁄êG");
+            
+            // è„ÇÈ
+            if (Input.GetKey(KeyCode.W))
             {
-                Vector2 pos = transform.position;
-                pos.y += 1f;
-                transform.position = pos;
-            }
-            if (Input.GetKey(KeyCode.S) && collision.gameObject.CompareTag("Ladder"))
-            {
-                Vector2 pos = transform.position;
-                pos.y -= 0.01f;
+                Vector3 pos = transform.position;
+                pos.y += 0.3f;
                 transform.position = pos;
             }
 
-
-
+            // â∫ÇÈ
+            if (Input.GetKey(KeyCode.S))
+            {
+                Vector3 pos = transform.position;
+                pos.y -= 0.3f;
+                transform.position = pos;
+            }
         }
     }
-    
-    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        rb.gravityScale = 1.0f;
+    }
+
 
 }
+
