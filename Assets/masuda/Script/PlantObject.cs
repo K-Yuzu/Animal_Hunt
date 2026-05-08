@@ -4,16 +4,19 @@ public class Plant : MonoBehaviour
 {
     public GameObject PlantText;
     private bool isPlayerNearby = false;
+    private int point ;
 
     private void Start()
     {
+        
         Debug.Log("test");
         PlantText.SetActive(false);
     }
 
     private void Update()
     {
-        if(isPlayerNearby&&Input.GetMouseButtonDown(1))
+        
+        if (isPlayerNearby&&Input.GetMouseButtonDown(1))
         {
             Debug.Log("右クリック検知");
             Plants();
@@ -22,10 +25,12 @@ public class Plant : MonoBehaviour
 
     void Plants()
     {
+        
         //確認用
         Debug.Log("採取した");
         PlantText.SetActive(false);
         Destroy(gameObject);
+       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
