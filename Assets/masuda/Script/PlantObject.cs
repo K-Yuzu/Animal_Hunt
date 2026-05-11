@@ -15,7 +15,7 @@ public class Plant : MonoBehaviour
 
     private void Update()
     {
-        
+        //右クリックを感知
         if (isPlayerNearby&&Input.GetMouseButtonDown(1))
         {
             Debug.Log("右クリック検知");
@@ -25,7 +25,7 @@ public class Plant : MonoBehaviour
 
     void Plants()
     {
-        
+        //テキストとオブジェクトの削除
         //確認用
         Debug.Log("採取した");
         PlantText.SetActive(false);
@@ -35,6 +35,7 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //プレーヤーの接近を感知
         Debug.Log("Hi!"+other.name);
         if (other.CompareTag("Player"))
         {
@@ -46,6 +47,7 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        //プレイヤーがいない場合、テキストを出さない
         if(other.CompareTag("Player"))
         {
             isPlayerNearby = false;

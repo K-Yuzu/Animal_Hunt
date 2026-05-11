@@ -11,6 +11,11 @@ public class PlayerMove : MonoBehaviour
     public Transform firePoint;
     public float launchForce = 15f;//力の強さ
 
+    //UI開いている間動きを止める
+    public bool cantMove = true;
+
+    
+
     private void Start()
     {
        
@@ -18,6 +23,9 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        //UIが開いている間
+        if (!cantMove)return;
+
         //移動処理
         if (Input.GetKey(KeyCode.D))
         {
@@ -32,6 +40,7 @@ public class PlayerMove : MonoBehaviour
             pos.x -= 0.01f;
             transform.position = pos;
         }
+
         //弓
         //マウスのほうへ
         Vector3 mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
