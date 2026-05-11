@@ -9,8 +9,13 @@ public class ioka_Player : MonoBehaviour
 
     bool OnGround = false;
     bool sya = false;
+    bool isLadder = false;
     int jump = 1;
-
+    public float DefGravity=10f;
+    public float MoveSpeed = 5f;
+    public float jumpspeed = 7f;
+    private float MoveX = 0.0f;
+    private float MoveY = 0.0f;
     private void Start()
     {
        rb = GetComponent<Rigidbody2D>();
@@ -23,46 +28,44 @@ public class ioka_Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D)&&sya==false)
         {
             //右への移動入力
-            Vector2 pos = transform.position;
-            pos.x += 0.01f;
-            transform.position = pos;
+            MoveX = MoveSpeed;
         }
         else if (Input.GetKey(KeyCode.A)&&sya==false)
         {
-            Vector2 pos = transform.position;
-            pos.x -= 0.01f;
-            transform.position = pos;
+            MoveX = -MoveSpeed;
+        }
+        else
+        {
+            MoveX = 0f;
         }
         //しゃがみ
-      if(Input.GetKey(KeyCode.LeftControl)&&OnGround==true)
+      if (Input.GetKey(KeyCode.LeftControl) && OnGround == true)
         {
             sya = true;
             Debug.Log("しゃがみ");
             if (Input.GetKey(KeyCode.D))
             {
                 //右への移動入力
-                Vector2 pos = transform.position;
-                pos.x += 0.005f;
-                transform.position = pos;
+                MoveX = MoveSpeed / 2;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                Vector2 pos = transform.position;
-                pos.x -= 0.005f;
-                transform.position = pos;
+                MoveX = -MoveSpeed / 2;
             }
         }
-      else
+        else
         {
             sya = false;
         }
         //ジャンプ
-        if (Input.GetKey(KeyCode.Space) && OnGround == true)
+        if (Input.GetKey(KeyCode.Space) && OnGround == true&&isLadder==false)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 5f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 17f);
         }
 
 
+        rb.linearVelocity = new Vector2(MoveX,rb.linearVelocity.y);
+        
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -83,17 +86,19 @@ public class ioka_Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        rb.gravityScale = 0.0f;
+        
         //Debug.Log("Trigger中");
         if (other.CompareTag("Ladder"))
         {
+            isLadder= true;
+            rb.gravityScale = 0.0f;
             //Debug.Log("Ladder接触");
             
             // 上る
             if (Input.GetKey(KeyCode.W))
             {
                 Vector3 pos = transform.position;
-                pos.y += 0.3f;
+                pos.y += 0.1f;
                 transform.position = pos;
             }
 
@@ -101,14 +106,32 @@ public class ioka_Player : MonoBehaviour
             if (Input.GetKey(KeyCode.S))
             {
                 Vector3 pos = transform.position;
-                pos.y -= 0.3f;
+                pos.y -= 0.1f;
                 transform.position = pos;
             }
+            else
+            {
+                Vector3 pos = transform.position;
+                pos.x += 0.0f;
+                transform.position = pos;
+
+            }
+        
+
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Ladder"))
+        {
+            MoveX = 0;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0.0f);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        rb.gravityScale = 1.0f;
+        rb.gravityScale = DefGravity;
+        isLadder = false;
     }
 
 
