@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ioka_enemy : MonoBehaviour
 {
+    public Transform player;
+    public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,16 +13,23 @@ public class ioka_enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player != null)
+        {
+            
+        }
+
     }
 
-    private void OnTrigger2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Vector2 pos = transform.position;
-            pos.x += 0.005f;
-            transform.position = pos;
+            Debug.Log("player‚ðŠ´’m");
+            player = other.transform;
+            Vector2 direction = (transform.position - player.position).normalized;
+
+            // ”½‘Î•ûŒü‚ÖˆÚ“®
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
         }
     }
 }
