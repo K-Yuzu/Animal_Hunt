@@ -12,7 +12,7 @@ public class ShotTest : MonoBehaviour
         Destroy(gameObject,lifeTime);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //•ú•¨ü
         if (rb.linearVelocity!=Vector2.zero)

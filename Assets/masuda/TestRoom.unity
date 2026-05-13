@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 51484321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArrowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1277,7 +1277,7 @@ GameObject:
   - component: {fileID: 600970544}
   - component: {fileID: 600970548}
   - component: {fileID: 600970547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerTestOBJ
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2554,6 +2554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPanel: {fileID: 714729960}
   UIText: {fileID: 110266345}
+  panelRect: {fileID: 714729961}
   playerMove: {fileID: 600970544}
   HelloText: {fileID: 100472684}
 --- !u!61 &1561906856
