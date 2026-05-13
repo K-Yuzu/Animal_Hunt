@@ -63,6 +63,8 @@ public class UIPanel : MonoBehaviour
         //プレイヤーを止める
         playerMove.cantMove = false;
 
+        Time.timeScale = 0f;
+
         StartCoroutine(SlidePanel(showPos));
     }
     public void UIClose()
@@ -71,7 +73,7 @@ public class UIPanel : MonoBehaviour
         MenuPanel.SetActive(false);
 
         //動ける
-        playerMove.cantMove= true;
+        playerMove.cantMove = true;
 
       StartCoroutine(ClosePanel());
     }
@@ -86,7 +88,7 @@ public class UIPanel : MonoBehaviour
 
         while (time <　duration)
         {
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
 
             float t = time / duration;
 
@@ -110,7 +112,7 @@ public class UIPanel : MonoBehaviour
 
         while (time < duration)
         {
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
 
             float t = time / duration;
 
@@ -127,6 +129,8 @@ public class UIPanel : MonoBehaviour
 
         // 非表示
         MenuPanel.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 
 
