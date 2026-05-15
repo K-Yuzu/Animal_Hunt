@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Plant
   - Ladder
+  - NoShot
   layers:
   - Default
   - TransparentFX

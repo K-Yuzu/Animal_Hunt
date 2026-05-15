@@ -14,7 +14,8 @@ public class PlayerMove : MonoBehaviour
     //UI開いている間動きを止める
     public bool cantMove = true;
 
-    
+    //非戦闘エリア判定
+    private bool isInNoShootArea = false;
 
     private void Start()
     {
@@ -49,7 +50,7 @@ public class PlayerMove : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         //左クリックで発射
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&!isInNoShootArea)
         {
             Shoot();
         }
@@ -63,5 +64,23 @@ public class PlayerMove : MonoBehaviour
         //矢に発射方向の力を加える
         Rigidbody2D rb=arrow.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right*launchForce,ForceMode2D.Impulse);
+    }
+
+    //エリアに入ったとき
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("NoShot"))
+        {
+            isInNoShootArea = true;
+        }
+    }
+
+    //出たとき
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("NoShot"))
+        {
+            isInNoShootArea = false;
+        }
     }
 }
