@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
-using UnityEngine.Rendering;
+
+
 
 
 public class PlayerMove : MonoBehaviour
 {
+    //移動速度
+    public float moveSpeed = 5f;
+
     //弓
     public GameObject arrowPrefab;
     public Transform firePoint;
@@ -17,31 +20,40 @@ public class PlayerMove : MonoBehaviour
     //非戦闘エリア判定
     private bool isInNoShootArea = false;
 
-    private void Start()
-    {
-     
-    }
-
     private void Update()
     {
         //UIが開いている間
-        if (!cantMove)return;
+        if (!cantMove) return;
 
+        Move();
+
+        Aim();
+
+        //左クリックで発射
+        if (Input.GetMouseButtonDown(0) && !isInNoShootArea)
+        {
+            Shoot();
+        }
+    }
+
+    void Move()
+    {
+        Vector2 pos=transform.position;
+        
         //移動処理
         if (Input.GetKey(KeyCode.D))
         {
             //右への移動入力
-            Vector2 pos = transform.position;
-            pos.x += 0.01f;
-            transform.position = pos;
+            pos.x += moveSpeed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            Vector2 pos = transform.position;
-            pos.x -= 0.01f;
-            transform.position = pos;
+            pos.x -= moveSpeed * Time.deltaTime;
         }
-
+        transform.position = pos;
+    }
+    void Aim()
+    {
         //弓
         //マウスのほうへ
         Vector3 mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -49,11 +61,7 @@ public class PlayerMove : MonoBehaviour
         float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        //左クリックで発射
-        if (Input.GetMouseButtonDown(0)&&!isInNoShootArea)
-        {
-            Shoot();
-        }
+        
     }
 
     void Shoot()
