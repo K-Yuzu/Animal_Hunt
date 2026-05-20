@@ -4,7 +4,7 @@ public class Plant : MonoBehaviour
 {
     public GameObject PlantText;
     private bool isPlayerNearby = false;
-    private int point ;
+    private int point = 10;
 
     private void Start()
     {
@@ -28,7 +28,11 @@ public class Plant : MonoBehaviour
         //テキストとオブジェクトの削除
         //確認用
         Debug.Log("採取した");
+
+        ScoreManager.instance.AddScore(point);
+
         PlantText.SetActive(false);
+
         Destroy(gameObject);
        
     }
