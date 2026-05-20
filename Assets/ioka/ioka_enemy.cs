@@ -1,9 +1,12 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ioka_enemy : MonoBehaviour
 {
     public Transform player;
     public float speed;
+
+    public Transform target;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,8 +22,37 @@ public class ioka_enemy : MonoBehaviour
         }
 
     }
+    public void PlayerEnter(AreaSensor.SensorType type, Transform player)
+    {
+        target = player;
 
-    private void OnTriggerEnter2D(Collider2D other)
+        switch (type)
+        {
+            case AreaSensor.SensorType.big:
+                Debug.Log("‰“‹——£”­Œ© ¨ ’ÇÕŠJn");
+                break;
+
+            case AreaSensor.SensorType.min:
+                Debug.Log("‹ß‹——£Œx‰ú");
+                break;
+        }
+    }
+
+    public void PlayerExit(AreaSensor.SensorType type)
+    {
+        switch (type)
+        {
+            case AreaSensor.SensorType.big:
+                Debug.Log("Œ©¸‚Á‚½");
+                break;
+
+            case AreaSensor.SensorType.min:
+                Debug.Log("‹ß‹——£”ÍˆÍŠO");
+                break;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
