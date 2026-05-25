@@ -3,45 +3,35 @@ using static AreaSensor;
 
 public class AreaSensor : MonoBehaviour
 {
-    public enum SensorType
+    ioka_enemy enemy;
+
+    private Vector2 escapeDirection = Vector2.right;
+
+    void Awake()
     {
-        big,min
+        enemy = transform.parent.GetComponent<ioka_enemy>();
+
+        if (enemy == null)
+        {
+            Debug.LogError("êeÇ… ioka_enemy Ç™å©Ç¬Ç©ÇËÇ‹ÇπÇÒ");
+        }
     }
 
-    public SensorType sensortype;
-
-    private ioka_enemy ioka_Enemy;
-
-    private void Awake()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        ioka_Enemy=GetComponent<ioka_enemy>();
+        if (!other.CompareTag("Player")) return;
+
+        if (enemy == null) return;
+
+        enemy.SetMoveDirection(escapeDirection);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
 
-        ioka_Enemy.PlayerEnter(sensortype,other.transform);
-    }
+        if (enemy == null) return;
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
-        ioka_Enemy.PlayerExit(sensortype);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        enemy.StopMove();
     }
 }
