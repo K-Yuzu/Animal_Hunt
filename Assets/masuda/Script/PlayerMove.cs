@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 
@@ -12,13 +13,23 @@ public class PlayerMove : MonoBehaviour
     //弓
     public GameObject arrowPrefab;
     public Transform firePoint;
-    public float launchForce = 15f;//力の強さ
+   
+    public float maxPower = 20f;// 最大威力
+    public float chargeSpeed = 10f;//たまる速さ
+    public float currentPower = 0f;//今の威力
+    private float chargeTimer = 0f;
+
+    public Image fillImage;//ゲージの色
+
 
     //UI開いている間動きを止める
     public bool cantMove = true;
 
     //非戦闘エリア判定
     private bool isInNoShootArea = false;
+
+    //スライダー
+    public Slider powerSlider;
 
     private void Update()
     {
@@ -30,9 +41,43 @@ public class PlayerMove : MonoBehaviour
         Aim();
 
         //左クリックで発射
-        if (Input.GetMouseButtonDown(0) && !isInNoShootArea)
+        if (Input.GetMouseButton(0) && !isInNoShootArea)
         {
-            Shoot();
+            powerSlider.gameObject.SetActive(true);
+            chargeTimer += chargeSpeed * Time.deltaTime;
+            currentPower=Mathf.PingPong(chargeTimer,maxPower);
+
+        }
+        if(Input.GetMouseButtonUp(0)&&!isInNoShootArea)
+        {
+            Shoot(currentPower + 5);
+
+            chargeTimer = 0f;
+            currentPower = 0;//リセット
+
+            powerSlider.gameObject.SetActive(false);
+        }
+
+        float ratio = currentPower/maxPower;
+
+        //
+        powerSlider.value = ratio;
+
+       if(ratio < 0.3f)
+        {
+            fillImage.color = Color.green;
+        }
+       else  if (ratio < 0.7f)
+        {
+            fillImage.color = Color.cyan;
+        }
+        else if(ratio<0.99f)
+        {
+            fillImage.color = Color.yellow;
+        }
+       else if(ratio<1.0f)
+        {
+            fillImage.color = Color.red;
         }
     }
 
@@ -64,14 +109,14 @@ public class PlayerMove : MonoBehaviour
         
     }
 
-    void Shoot()
+    void Shoot(float power)
     {
         //矢を生成
         GameObject arrow = Instantiate(arrowPrefab,firePoint.position,firePoint.rotation);
 
         //矢に発射方向の力を加える
         Rigidbody2D rb=arrow.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.right*launchForce,ForceMode2D.Impulse);
+        rb.AddForce(firePoint.right*power,ForceMode2D.Impulse);
     }
 
     //エリアに入ったとき
@@ -80,6 +125,10 @@ public class PlayerMove : MonoBehaviour
         if(collision.CompareTag("NoShot"))
         {
             isInNoShootArea = true;
+            chargeTimer = 0f;
+            currentPower = 0;//リセット
+
+            powerSlider.gameObject.SetActive(false);
         }
     }
 

@@ -52,7 +52,7 @@ public class ShopManager : MonoBehaviour
                 break;
 
             case StatType.Attack:
-                player.launchForce += item.value;
+                //player.power += item.value;
                 break;
         }
     }
