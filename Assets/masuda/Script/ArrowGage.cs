@@ -28,7 +28,7 @@ public class ArrowGage : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             rb=GetComponent<Rigidbody2D>();
-            rb.AddForce(0, 0, power*2, ForceMode2D.Impulse);
+            rb.AddForce(new Vector2( 0, power*2), ForceMode2D.Impulse);
             power = 0;
         }
 
