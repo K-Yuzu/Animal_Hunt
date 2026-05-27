@@ -10,6 +10,7 @@ TagManager:
   - Plant
   - Ladder
   - NoShot
+  - Attack
   layers:
   - Default
   - TransparentFX
