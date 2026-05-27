@@ -73,9 +73,7 @@ public class UIPanel : MonoBehaviour
     public void UIClose()
     {
         isOpen = false;
-        MenuPanel.SetActive(false);
-
-        //“®‚¯‚é
+       
         playerMove.cantMove = true;
 
       StartCoroutine(ClosePanel());
