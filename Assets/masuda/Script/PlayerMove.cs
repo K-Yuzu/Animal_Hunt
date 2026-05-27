@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     private float chargeTimer = 0f;
 
     public float damage;
+    public float attackBonus = 0f;
 
     public Image fillImage;//ゲージの色
 
@@ -53,7 +54,7 @@ public class PlayerMove : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0)&&!isInNoShootArea)
         {
-            Shoot(currentPower + 5,damage);
+            Shoot(currentPower + 5);
 
             chargeTimer = 0f;
             currentPower = 0;//リセット
@@ -62,30 +63,31 @@ public class PlayerMove : MonoBehaviour
         }
 
         float ratio = currentPower/maxPower;
-
+        
         //
         powerSlider.value = ratio;
-
+        float baseDamage;
        if(ratio < 0.3f)
         {
             fillImage.color = Color.green;
-            damage = 3f;
+            baseDamage = 3f;
         }
        else  if (ratio < 0.7f)
         {
             fillImage.color = Color.cyan;
-            damage = 7f;
+            baseDamage = 6f;
         }
         else if(ratio<0.99f)
         {
             fillImage.color = Color.yellow;
-            damage = 12f;
+            baseDamage = 9f;
         }
-       else if(ratio<1.0f)
+       else 
         {
             fillImage.color = Color.red;
-            damage = 15f;
+            baseDamage = 9f;
         }
+        damage = baseDamage + attackBonus;
     }
 
     void Move()
@@ -116,7 +118,7 @@ public class PlayerMove : MonoBehaviour
         
     }
 
-    void Shoot(float power,float damage)
+    void Shoot(float power)
     {
         //矢を生成
         GameObject arrow = Instantiate(arrowPrefab,firePoint.position,firePoint.rotation);
@@ -128,6 +130,7 @@ public class PlayerMove : MonoBehaviour
         ShotTest shot =arrow.GetComponent<ShotTest>();
 
         shot.damage = damage;
+        Debug.Log("Arrow damage = " + damage);
     }
 
     //エリアに入ったとき
