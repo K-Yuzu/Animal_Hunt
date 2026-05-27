@@ -9,6 +9,8 @@ public class ArrowGage : MonoBehaviour
     private float power;
     public Rigidbody2D rb;
     public Slider slider;
+
+    public float damage=3;
     void Start()
     {
         power = 0;
