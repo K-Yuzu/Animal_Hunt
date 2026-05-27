@@ -31,7 +31,7 @@ public class ShotTest : MonoBehaviour
 
     void Delete_obj()
     {
-        Destroy(gameObject,0.3f);
+        Destroy(gameObject,0.01f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
