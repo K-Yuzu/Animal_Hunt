@@ -40,5 +40,9 @@ public class ShotTest : MonoBehaviour
         {
             Delete_obj();
         }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Delete_obj();
+        }
     }
 }
