@@ -19,6 +19,9 @@ public class UIPanel : MonoBehaviour
     //こんにちはテキスト
     public GameObject HelloText;
 
+    //ショップUI
+    public GameObject ShopPanel;
+
     //パネルの初期位置
     private Vector2 hidePos = new Vector2(0, -1000);
     private Vector2 showPos = new Vector2(0, 0);
@@ -27,7 +30,7 @@ public class UIPanel : MonoBehaviour
     {
 
         Debug.Log("test");
-        MenuPanel.SetActive(false);
+        ShopPanel.SetActive(false);
         UIText.SetActive(false);
         HelloText.SetActive(false);
 
@@ -168,5 +171,20 @@ public class UIPanel : MonoBehaviour
             UIText.SetActive(false);
             //MenuPanel.SetActive(false );
         }
+    }
+
+    public void ShopOpen()
+    {
+        isOpen = true;
+
+        UIText.SetActive(false);
+
+        ShopPanel.SetActive(true);
+
+        playerMove.cantMove = false;
+
+        Time.timeScale = 0f;
+
+        StartCoroutine(SlidePanel(showPos));
     }
 }

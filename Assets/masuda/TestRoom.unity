@@ -3171,7 +3171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5F37\u5316 30$\n"
+  m_text: "\u5F37\u5316 10$\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb8b4c8596b10394b98d69ecc721c7e1, type: 2}
   m_sharedMaterial: {fileID: -5950701230219152055, guid: fb8b4c8596b10394b98d69ecc721c7e1, type: 2}
