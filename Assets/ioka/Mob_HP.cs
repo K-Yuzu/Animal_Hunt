@@ -3,25 +3,11 @@ using UnityEngine;
 public class Mob_HP : MonoBehaviour
 {
     public float MobHP = 10;
-    float damage;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //ArrowGage arrowgage = GameObject.Find("Arrow").GetComponent<ArrowGage>();
-        GameObject arrowobj = GameObject.FindWithTag("Attack");
-
-        if(arrowobj != null )
-        {
-            ArrowGage arrowgage = arrowobj.GetComponent<ArrowGage>();
-
-        }
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
-        
+        Mob_delete();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,8 +15,13 @@ public class Mob_HP : MonoBehaviour
        
         if (collision.gameObject.CompareTag("Attack"))
         {
-            MobHP -= damage;
-            Debug.Log("残りHPは"+MobHP);
+            ShotTest shotTest = collision.gameObject.GetComponent<ShotTest>();
+
+            if (shotTest != null)
+            {
+                MobHP -= shotTest.damage;
+                Debug.Log("残りHPは" + MobHP+"：ダメージは"+shotTest.damage);
+            }
         }
     }
 

@@ -6,6 +6,8 @@ public class ShotTest : MonoBehaviour
     private Rigidbody2D rb;
     public float lifeTime = 5f;
 
+    public float damage=3;
+
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -19,6 +21,24 @@ public class ShotTest : MonoBehaviour
         {
             float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x)*Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    void Delete_obj()
+    {
+        Destroy(gameObject,0.3f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            Delete_obj();
         }
     }
 }

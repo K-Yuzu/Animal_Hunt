@@ -13,8 +13,11 @@ public class ioka_enemy : MonoBehaviour
     private Vector2 moveDir;
     private bool isMoving;
 
+    private SpriteRenderer sr;
+
     void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -29,14 +32,18 @@ public class ioka_enemy : MonoBehaviour
 
         if (isMoving)
         {
-            Vector2 moveDir = (transform.position - target.position).normalized;
-
+            moveDir = ((Vector2)transform.position - (Vector2)target.position).normalized;
+            
             rb.linearVelocity = moveDir * speed;
+
+            
+            sr.flipX = moveDir.x > 0;
         }
         else
         {
             rb.linearVelocity = Vector2.zero;
         }
+
     }
 
     public void SetMoveDirection(Vector2 dir)

@@ -60,7 +60,7 @@ public class ioka_Player : MonoBehaviour
         //ƒWƒƒƒ“ƒv
         if (Input.GetKey(KeyCode.Space) && OnGround == true&&isLadder==false)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 17f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 30f);
         }
 
 
