@@ -14,10 +14,13 @@ public class PlayerMove : MonoBehaviour
     public GameObject arrowPrefab;
     public Transform firePoint;
    
+   
     public float maxPower = 20f;// 最大威力
     public float chargeSpeed = 10f;//たまる速さ
     public float currentPower = 0f;//今の威力
     private float chargeTimer = 0f;
+
+    public float damage;
 
     public Image fillImage;//ゲージの色
 
@@ -50,7 +53,7 @@ public class PlayerMove : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0)&&!isInNoShootArea)
         {
-            Shoot(currentPower + 5);
+            Shoot(currentPower + 5,damage);
 
             chargeTimer = 0f;
             currentPower = 0;//リセット
@@ -66,18 +69,22 @@ public class PlayerMove : MonoBehaviour
        if(ratio < 0.3f)
         {
             fillImage.color = Color.green;
+            damage = 3f;
         }
        else  if (ratio < 0.7f)
         {
             fillImage.color = Color.cyan;
+            damage = 7f;
         }
         else if(ratio<0.99f)
         {
             fillImage.color = Color.yellow;
+            damage = 12f;
         }
        else if(ratio<1.0f)
         {
             fillImage.color = Color.red;
+            damage = 15f;
         }
     }
 
@@ -109,7 +116,7 @@ public class PlayerMove : MonoBehaviour
         
     }
 
-    void Shoot(float power)
+    void Shoot(float power,float damage)
     {
         //矢を生成
         GameObject arrow = Instantiate(arrowPrefab,firePoint.position,firePoint.rotation);
@@ -117,6 +124,10 @@ public class PlayerMove : MonoBehaviour
         //矢に発射方向の力を加える
         Rigidbody2D rb=arrow.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right*power,ForceMode2D.Impulse);
+
+        ShotTest shot =arrow.GetComponent<ShotTest>();
+
+        shot.damage = damage;
     }
 
     //エリアに入ったとき
