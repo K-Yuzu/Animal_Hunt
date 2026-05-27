@@ -5,6 +5,7 @@ public class ShopManager : MonoBehaviour
     public static ShopManager instance;
 
     public PlayerMove player;
+    public ShotTest arrow;
 
     [System.Serializable]
     public class ShopItem
@@ -52,7 +53,7 @@ public class ShopManager : MonoBehaviour
                 break;
 
             case StatType.Attack:
-                //player.power += item.value;
+                arrow.damage+= item.value;
                 break;
         }
     }

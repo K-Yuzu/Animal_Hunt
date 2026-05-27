@@ -1,9 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mob_HP : MonoBehaviour
 {
     public float MobHP = 10;
-    
+
+    //追加
+    public float currentHp;
+
+    //HPバー
+    public Slider hpSlider;
+
+    void Start()
+    {
+        currentHp = MobHP;
+
+        hpSlider.maxValue = MobHP;
+        hpSlider.value = currentHp;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +34,8 @@ public class Mob_HP : MonoBehaviour
 
             if (shotTest != null)
             {
-                MobHP -= shotTest.damage;
+                currentHp -= shotTest.damage;
+                hpSlider.value = currentHp;
                 Debug.Log("残りHPは" + MobHP+"：ダメージは"+shotTest.damage);
             }
         }
@@ -27,9 +43,10 @@ public class Mob_HP : MonoBehaviour
 
     void Mob_delete()
     {
-        if (MobHP <= 0)
+        if (currentHp <= 0)
         {
             Destroy(gameObject,0.1f);
+           hpSlider.gameObject.SetActive(false);
         }
     }
 }

@@ -30,12 +30,20 @@ public class UIPanel : MonoBehaviour
     {
 
         Debug.Log("test");
+        MenuPanel.SetActive(false);
         ShopPanel.SetActive(false);
         UIText.SetActive(false);
         HelloText.SetActive(false);
 
         panelRect.anchoredPosition = hidePos;
     }
+
+    public enum UIType
+    { 
+        Main,
+        Shop
+    }
+
 
     private void Update()
     {
@@ -62,7 +70,8 @@ public class UIPanel : MonoBehaviour
 
         UIText.SetActive(false);
         MenuPanel.SetActive(true);
-        
+        ShopPanel.SetActive(false);
+
         //プレイヤーを止める
         playerMove.cantMove = false;
 
@@ -73,7 +82,6 @@ public class UIPanel : MonoBehaviour
     public void UIClose()
     {
         isOpen = false;
-       
         playerMove.cantMove = true;
 
       StartCoroutine(ClosePanel());
@@ -102,6 +110,7 @@ public class UIPanel : MonoBehaviour
         }
 
         panelRect.anchoredPosition = target;
+
     }
 
     IEnumerator ClosePanel()
@@ -130,6 +139,7 @@ public class UIPanel : MonoBehaviour
 
         // 非表示
         MenuPanel.SetActive(false);
+        ShopPanel.SetActive(false);
 
         Time.timeScale = 1f;
     }
@@ -175,13 +185,9 @@ public class UIPanel : MonoBehaviour
     {
         isOpen = true;
 
-        UIText.SetActive(false);
+        MenuPanel.SetActive(false);
 
         ShopPanel.SetActive(true);
-
-        playerMove.cantMove = false;
-
-        Time.timeScale = 0f;
 
         StartCoroutine(SlidePanel(showPos));
     }
