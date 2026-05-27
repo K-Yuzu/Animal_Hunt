@@ -53,7 +53,7 @@ public class ShopManager : MonoBehaviour
                 break;
 
             case StatType.Attack:
-                arrow.damage+= item.value;
+                player.attackBonus+= item.value;
                 break;
         }
     }
