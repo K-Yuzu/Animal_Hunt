@@ -36,7 +36,7 @@ public class Mob_HP : MonoBehaviour
             {
                 currentHp -= shotTest.damage;
                 hpSlider.value = currentHp;
-                Debug.Log("残りHPは" + MobHP+"：ダメージは"+shotTest.damage);
+                Debug.Log("残りHPは" + currentHp+"：ダメージは"+shotTest.damage);
             }
         }
     }

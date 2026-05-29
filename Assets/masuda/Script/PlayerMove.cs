@@ -77,12 +77,12 @@ public class PlayerMove : MonoBehaviour
             fillImage.color = Color.cyan;
             baseDamage = 6f;
         }
-        else if(ratio<0.99f)
+        else if(ratio<0.95f)
         {
             fillImage.color = Color.yellow;
             baseDamage = 9f;
         }
-       else 
+       else  
         {
             fillImage.color = Color.red;
             baseDamage = 9f;
@@ -129,8 +129,21 @@ public class PlayerMove : MonoBehaviour
 
         ShotTest shot =arrow.GetComponent<ShotTest>();
 
-        shot.damage = damage;
-        Debug.Log("Arrow damage = " + damage);
+        //
+        float ratio = currentPower / maxPower;
+
+        //
+        float finalDamage=Mathf.Lerp(3f,15f,ratio);
+
+        //
+        finalDamage=Mathf.Round(finalDamage);
+
+        //
+        finalDamage += attackBonus;
+
+
+        shot.damage = finalDamage;
+        Debug.Log("Arrow damage = " + finalDamage);
     }
 
     //ƒGƒŠƒA‚É“ü‚Á‚½‚Æ‚«
