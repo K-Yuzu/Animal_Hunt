@@ -3213,7 +3213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50af28f83fcc9f348aae78e19c0ef0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlantText: {fileID: 0}
+  PlantText: {fileID: 1498489643}
 --- !u!61 &1845008911
 BoxCollider2D:
   m_ObjectHideFlags: 0
