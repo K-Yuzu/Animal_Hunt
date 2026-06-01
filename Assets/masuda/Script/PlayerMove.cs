@@ -70,22 +70,22 @@ public class PlayerMove : MonoBehaviour
        if(ratio < 0.3f)
         {
             fillImage.color = Color.green;
-            baseDamage = 3f;
+            baseDamage = 1f;
         }
        else  if (ratio < 0.7f)
         {
             fillImage.color = Color.cyan;
-            baseDamage = 6f;
+            baseDamage = 3f;
         }
         else if(ratio<0.95f)
         {
             fillImage.color = Color.yellow;
-            baseDamage = 9f;
+            baseDamage = 5f;
         }
        else  
         {
             fillImage.color = Color.red;
-            baseDamage = 9f;
+            baseDamage = 10f;
         }
         damage = baseDamage + attackBonus;
     }
@@ -133,7 +133,7 @@ public class PlayerMove : MonoBehaviour
         float ratio = currentPower / maxPower;
 
         //
-        float finalDamage=Mathf.Lerp(3f,15f,ratio);
+        float finalDamage=Mathf.Lerp(1f,10f,ratio);
 
         //
         finalDamage=Mathf.Round(finalDamage);

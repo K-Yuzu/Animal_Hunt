@@ -6,7 +6,7 @@ public class ShotTest : MonoBehaviour
     private Rigidbody2D rb;
     public float lifeTime = 5f;
 
-    public float damage=3;
+    public float damage;
 
     void Start()
     {

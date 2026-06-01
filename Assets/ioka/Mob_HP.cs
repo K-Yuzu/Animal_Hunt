@@ -3,10 +3,14 @@ using UnityEngine.UI;
 
 public class Mob_HP : MonoBehaviour
 {
+    //最大HP
     public float MobHP = 10;
 
-    //追加
+    //現在のHP
     public float currentHp;
+
+    //スコア
+    public int scoreValue;
 
     //HPバー
     public Slider hpSlider;
@@ -19,12 +23,7 @@ public class Mob_HP : MonoBehaviour
         hpSlider.value = currentHp;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Mob_delete();
-    }
-
+    //矢のコライダー判定
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
@@ -34,19 +33,39 @@ public class Mob_HP : MonoBehaviour
 
             if (shotTest != null)
             {
-                currentHp -= shotTest.damage;
-                hpSlider.value = currentHp;
-                Debug.Log("残りHPは" + currentHp+"：ダメージは"+shotTest.damage);
+               TakeDamage(shotTest.damage);
             }
         }
     }
 
-    void Mob_delete()
+    //ダメージ処理
+    void TakeDamage(float damage)
     {
+        currentHp -= damage;
+        hpSlider.value = currentHp;
+
+        Debug.Log($"残りHP:{currentHp} 与えたダメージ:{damage}");
+        
         if (currentHp <= 0)
         {
-            Destroy(gameObject,0.1f);
-           hpSlider.gameObject.SetActive(false);
+            float overDamage=Mathf.Abs(currentHp);
+
+            int finalScore=scoreValue-Mathf.RoundToInt(overDamage);
+
+            //マイナスにならないように
+            finalScore=Mathf.Max(0, finalScore);
+
+            ScoreManager.instance.AddScore(finalScore);
+
+            Die();
         }
+    }
+
+    //死亡処理
+    void Die()
+    {
+
+        hpSlider.gameObject.SetActive(false);
+        Destroy(gameObject, 0.1f);
     }
 }
