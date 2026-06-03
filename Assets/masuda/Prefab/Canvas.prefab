@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 804414300997687717}
   - component: {fileID: 101034839197031863}
   m_Layer: 5
-  m_Name: Button3
+  m_Name: speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
         m_Arguments:
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 97791545730526415}
   - component: {fileID: 4534853147059927246}
   m_Layer: 5
-  m_Name: 'Button3 '
+  m_Name: shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,7 +662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8065720286135927621
 RectTransform:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 7332411821858634908}
   - component: {fileID: 7508895609842729354}
   m_Layer: 5
-  m_Name: Button3 (2)
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1026,8 +1026,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 319.5443, y: 163.5401}
-  m_SizeDelta: {x: 278.9114, y: 71.9198}
+  m_AnchoredPosition: {x: 385, y: 175.25}
+  m_SizeDelta: {x: 278.9114, y: 61.496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1706621268038458637
 CanvasRenderer:
@@ -1504,7 +1504,7 @@ RectTransform:
   m_GameObject: {fileID: 4901603169961663458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6233993005038993850}
@@ -1513,8 +1513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.89827174}
-  m_AnchoredPosition: {x: 0, y: 55.58}
-  m_SizeDelta: {x: 160, y: -144}
+  m_AnchoredPosition: {x: 0, y: 93.206024}
+  m_SizeDelta: {x: 400, y: -125.20999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8886814898990398163
 MonoBehaviour:
@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 4613197830128864184}
   - component: {fileID: 4123872862248217671}
   m_Layer: 5
-  m_Name: Button1
+  m_Name: say
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2060,7 +2060,7 @@ GameObject:
   - component: {fileID: 3139177652207302664}
   - component: {fileID: 8870059067459384551}
   m_Layer: 5
-  m_Name: Button3 (1)
+  m_Name: attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2169,7 +2169,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
         m_Arguments:
@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 6980041717943958352}
   - component: {fileID: 930194235341502313}
   m_Layer: 5
-  m_Name: Button2
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2382,7 +2382,7 @@ RectTransform:
   m_Father: {fileID: 1499148606693113672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2458,8 +2458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250.8, y: -94.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -341, y: -9}
+  m_SizeDelta: {x: 203.2394, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4284978618211635648
 CanvasRenderer:
