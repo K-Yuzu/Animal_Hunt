@@ -4,56 +4,62 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ioka_enemy : MonoBehaviour
 {
+    [SerializeField] private minsensor minsensor;
+    [SerializeField] private bigsensor bigsensor;
+    [SerializeField] private Transform player;
+    [SerializeField] private float moveSpeed = 10f;
+
+
     public float speed = 3f;
 
     private Rigidbody2D rb;
-
-    private Transform target;
-
-    private Vector2 moveDir;
-    private bool isMoving;
-
     private SpriteRenderer sr;
-
-    void Awake()
-    {
-        sr = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        target = player.transform;
+        //target = player.transform;
     }
+
 
     private void FixedUpdate()
     {
-
-        if (isMoving)
+        if(minsensor.escape_enemy)
         {
-            moveDir = ((Vector2)transform.position - (Vector2)target.position).normalized;
-            
-            rb.linearVelocity = moveDir * speed;
-
-            
-            sr.flipX = moveDir.x > 0;
+            Debug.Log("逃げる");
+            escape();
+        }
+        else if(bigsensor.playerDetected)
+        {
+            Debug.Log("見つかった");
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            Debug.Log("ｍんｌｋんｇヵ");
         }
-
     }
 
-    public void SetMoveDirection(Vector2 dir)
+    void escape()
     {
-        moveDir = dir.normalized;
-        isMoving = true;
-    }
+        if (player == null) return;
 
-    public void StopMove()
+        // プレイヤーから敵への方向ベクトル
+        Vector2 awayDirection = new Vector2
+            (transform.position.x - player.position.x,0f).normalized;
+        // 反対方向へ移動
+        rb.linearVelocity = awayDirection * moveSpeed;
+        sr.flipX = awayDirection.x > 0;
+    }
+    void Detected()
     {
-        isMoving = false;
+        Vector2 awayDirection = new Vector2
+            (transform.position.x - player.position.x, 0f).normalized;
+        sr.flipX = awayDirection.x < 0;
+    }
+    void Patrol()
+    {
+
     }
 }
