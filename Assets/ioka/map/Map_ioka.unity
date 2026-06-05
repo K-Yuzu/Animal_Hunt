@@ -274,7 +274,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -796,11 +796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3011004757136291465, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.5
+      value: -29.74
       objectReference: {fileID: 0}
     - target: {fileID: 3011004757136291465, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: 3.53
       objectReference: {fileID: 0}
     - target: {fileID: 3011004757136291465, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -838,10 +838,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTestOBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5737828588028802734, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: jumpspeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: fillImage
       value: 
       objectReference: {fileID: 1220328247}
+    - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 114412127}
     - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: powerSlider
       value: 
