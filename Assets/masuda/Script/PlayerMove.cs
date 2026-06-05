@@ -51,7 +51,7 @@ public class PlayerMove : MonoBehaviour
         //UI‚ªŠJ‚¢‚Ä‚¢‚éŠÔ
         if (!cantMove) return;
 
-        Move();
+        //Move();
 
         Aim();
 
@@ -130,22 +130,22 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    void Move()
-    {
-        Vector2 pos=transform.position;
+    //void Move()
+    //{
+    //    Vector2 pos=transform.position;
         
-        //ˆÚ“®ˆ—
-        if (Input.GetKey(KeyCode.D))
-        {
-            //‰E‚Ö‚ÌˆÚ“®“ü—Í
-            pos.x += moveSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            pos.x -= moveSpeed * Time.deltaTime;
-        }
-        transform.position = pos;
-    }
+    //    //ˆÚ“®ˆ—
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        //‰E‚Ö‚ÌˆÚ“®“ü—Í
+    //        pos.x += moveSpeed * Time.deltaTime;
+    //    }
+    //    else if (Input.GetKey(KeyCode.A))
+    //    {
+    //        pos.x -= moveSpeed * Time.deltaTime;
+    //    }
+    //    transform.position = pos;
+    //}
     void Aim()
     {
         //‹|

@@ -60,7 +60,7 @@ public class ioka_Player : MonoBehaviour
         //ƒWƒƒƒ“ƒv
         if (Input.GetKey(KeyCode.Space) && OnGround == true&&isLadder==false)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 30f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpspeed);
         }
 
 
@@ -130,7 +130,11 @@ public class ioka_Player : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        rb.gravityScale = DefGravity;
+        if (other.CompareTag("Ladder"))
+        {
+            rb.gravityScale = DefGravity;
+            
+        }
         isLadder = false;
     }
 

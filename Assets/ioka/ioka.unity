@@ -2397,6 +2397,12 @@ MonoBehaviour:
   fillImage: {fileID: 2049716594}
   cantMove: 1
   powerSlider: {fileID: 2142757004}
+  slowTimeScale: 0.05
+  slowSpeed: 6
+  mainCamera: {fileID: 0}
+  nomalSize: 5
+  zoomSize: 4
+  zoomSpeed: 5
 --- !u!114 &2056077684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2445,11 +2451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3619095890497143337, guid: abd2dc9d9cfe48745bd1a7b80bd7fa2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.04
+      value: 8.74
       objectReference: {fileID: 0}
     - target: {fileID: 3619095890497143337, guid: abd2dc9d9cfe48745bd1a7b80bd7fa2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 3619095890497143337, guid: abd2dc9d9cfe48745bd1a7b80bd7fa2d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2485,7 +2491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5748973310206844638, guid: abd2dc9d9cfe48745bd1a7b80bd7fa2d, type: 3}
       propertyPath: m_GravityScale
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7598103222109597011, guid: abd2dc9d9cfe48745bd1a7b80bd7fa2d, type: 3}
       propertyPath: m_AnchorMax.x

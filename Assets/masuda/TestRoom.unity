@@ -3565,6 +3565,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTestOBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5737828588028802734, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: jumpspeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737828588028802734, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: DefGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: zoomSize
       value: 10
