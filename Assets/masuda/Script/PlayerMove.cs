@@ -35,6 +35,17 @@ public class PlayerMove : MonoBehaviour
     //スライダー
     public Slider powerSlider;
 
+    //時間
+    public float slowTimeScale = 0.05f;
+    public float slowSpeed = 6.0f;
+
+    //カメラ
+    public Camera mainCamera;
+
+    public float nomalSize = 5f;
+    public float zoomSize = 4f;
+    public float zoomSpeed = 5f;
+
     private void Update()
     {
         //UIが開いている間
@@ -47,13 +58,17 @@ public class PlayerMove : MonoBehaviour
         //左クリックで発射
         if (Input.GetMouseButton(0) && !isInNoShootArea)
         {
+
+
             powerSlider.gameObject.SetActive(true);
-            chargeTimer += chargeSpeed * Time.deltaTime;
+            chargeTimer += chargeSpeed * Time.unscaledDeltaTime;
             currentPower=Mathf.PingPong(chargeTimer,maxPower);
 
         }
         if(Input.GetMouseButtonUp(0)&&!isInNoShootArea)
         {
+          
+
             Shoot(currentPower + 5);
 
             chargeTimer = 0f;
@@ -88,6 +103,31 @@ public class PlayerMove : MonoBehaviour
             baseDamage = 10f;
         }
         damage = baseDamage + attackBonus;
+
+        //スローにしてみる処理
+        float targetTimeScale =
+            (Input.GetMouseButton(0) && !isInNoShootArea)
+            ? slowTimeScale
+            : 1f;
+
+        Time.timeScale = Mathf.Lerp
+            (Time.timeScale, 
+            targetTimeScale, 
+            Time.unscaledDeltaTime * slowSpeed);
+
+        Time.fixedDeltaTime=0.02f*Time.timeScale;
+
+        //カメラズーム
+        float targetSize =
+            (Input.GetMouseButton(0) && !isInNoShootArea)
+            ? zoomSize
+            : nomalSize;
+
+        mainCamera.orthographicSize = Mathf.Lerp
+            (mainCamera.orthographicSize,
+            targetSize,
+            Time.unscaledDeltaTime * zoomSpeed);
+
     }
 
     void Move()
