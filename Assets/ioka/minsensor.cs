@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class minsensor : MonoBehaviour
 {
+
+    public float timer = 0.0f;
     public bool escape_enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -11,5 +13,11 @@ public class minsensor : MonoBehaviour
         {
             escape_enemy = true;
         }
+        else if(other.CompareTag("Attack"))
+        {
+            
+            escape_enemy = true;
+        }
     }
+        
 }

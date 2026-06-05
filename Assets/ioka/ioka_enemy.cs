@@ -15,11 +15,14 @@ public class ioka_enemy : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
+    public float timer = 0.0f;
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject arrow  = GameObject.FindGameObjectWithTag("Attack");
         //target = player.transform;
     }
 
@@ -30,6 +33,7 @@ public class ioka_enemy : MonoBehaviour
         {
             Debug.Log("逃げる");
             escape();
+            enemyDestroy();
         }
         else if(bigsensor.playerDetected)
         {
@@ -37,10 +41,26 @@ public class ioka_enemy : MonoBehaviour
         }
         else
         {
-            Debug.Log("ｍんｌｋんｇヵ");
+            //Debug.Log("ｍんｌｋんｇヵ");
         }
     }
 
+    private void Update()
+    {
+       
+    }
+
+    private void enemyDestroy()
+    {
+        //タイマー
+        timer += Time.deltaTime;
+
+        if (timer >= 10.0f)
+        {
+            Destroy(gameObject);
+            timer = 0.0f;
+        }
+    }
     void escape()
     {
         if (player == null) return;
@@ -60,6 +80,11 @@ public class ioka_enemy : MonoBehaviour
     }
     void Patrol()
     {
-
+        //タイマー
+        timer += Time.deltaTime;
+        if (timer < 3.0f)
+        {
+            Vector2 walk=new Vector2(transform.position.x-transform.position.x, 0f).normalized;
+        }
     }
 }
