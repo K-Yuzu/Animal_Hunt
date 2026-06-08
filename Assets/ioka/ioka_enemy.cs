@@ -9,11 +9,11 @@ public class ioka_enemy : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float moveSpeed = 10f;
 
-
     public float speed = 3f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator anim;
 
     public float timer = 0.0f;
 
@@ -21,6 +21,7 @@ public class ioka_enemy : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject arrow  = GameObject.FindGameObjectWithTag("Attack");
         //target = player.transform;
@@ -33,11 +34,16 @@ public class ioka_enemy : MonoBehaviour
         {
             Debug.Log("“¦‚°‚é");
             escape();
+            anim.SetBool("move", true);
             enemyDestroy();
         }
         else if(bigsensor.playerDetected)
         {
             Debug.Log("Œ©‚Â‚©‚Á‚½");
+
+                anim.SetBool("bikkuri", true);
+
+            
         }
         else
         {

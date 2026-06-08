@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9c99d4140e1cb9347867d123bfb33259
+guid: c60c879e415c7b247943f6b81f7eb603
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6869109003187468410
-    second: boar_stop_0
+      213: 5970684452635210389
+    second: player_yumi_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boar_stop_0
+      name: player_yumi_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1500
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1499
+      alignment: 9
+      pivot: {x: 0.6195091, y: 0.4806073}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 687c29571c50ca0a0800000000000000
-      internalID: -6869109003187468410
+      spriteID: 592f44920e12cd250800000000000000
+      internalID: 5970684452635210389
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ffbad8a44eacc04459c3fc005dc5fc24
+    spriteID: d44b9ae2d5c9b6040bb8411dd9c92223
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      boar_stop_0: -6869109003187468410
+      player_yumi_0: 5970684452635210389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
