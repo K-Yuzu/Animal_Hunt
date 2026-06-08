@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4167876023744090487}
   - component: {fileID: 4589465057489938044}
   - component: {fileID: 6862534479857112505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy
   m_TagString: Mob
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7280730243871075193}
   - component: {fileID: 5789015420094057680}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: EnemyHp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1218953600519672001}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 6459986892308991731}
   - component: {fileID: 7543217540390144108}
   - component: {fileID: 5503855949887600378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 8124639690711204223}
   - component: {fileID: 5998279257123649294}
   - component: {fileID: 3774189403591809230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 5137692364479183433}
   - component: {fileID: 8762285434405597026}
   - component: {fileID: 3477572257410183992}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 3679334926152445863}
   - component: {fileID: 3301732287385802993}
   - component: {fileID: 7686827265749642830}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 921136327330106709}
   - component: {fileID: 3507617521144561853}
   - component: {fileID: 7712088968026137246}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HPCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
