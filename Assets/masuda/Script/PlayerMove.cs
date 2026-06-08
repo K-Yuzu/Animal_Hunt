@@ -7,204 +7,150 @@ using System.Collections.Generic;
 
 public class PlayerMove : MonoBehaviour
 {
-    //移動速度
-    public float moveSpeed = 5f;
+    Animator anim;
+    Rigidbody2D rb;
 
-    //弓
-    public GameObject arrowPrefab;
-    public Transform firePoint;
-   
-   
-    public float maxPower = 20f;// 最大威力
-    public float chargeSpeed = 10f;//たまる速さ
-    public float currentPower = 0f;//今の威力
-    private float chargeTimer = 0f;
-
-    public float damage;
-    public float attackBonus = 0f;
-
-    public Image fillImage;//ゲージの色
-
+    bool OnGround = false;
+    bool sya = false;
+    bool isLadder = false;
+    int jump = 1;
+    public float DefGravity = 10f;
+    public float MoveSpeed = 5f;
+    public float jumpspeed = 7f;
+    private float MoveX = 0.0f;
+    private float MoveY = 0.0f;
 
     //UI開いている間動きを止める
     public bool cantMove = true;
-
-    //非戦闘エリア判定
-    private bool isInNoShootArea = false;
-
-    //スライダー
-    public Slider powerSlider;
-
-    //時間
-    public float slowTimeScale = 0.05f;
-    public float slowSpeed = 6.0f;
-
-    //カメラ
-    public Camera mainCamera;
-
-    public float nomalSize = 5f;
-    public float zoomSize = 4f;
-    public float zoomSpeed = 5f;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
-        //UIが開いている間
-        if (!cantMove) return;
-
-        //Move();
-
-        Aim();
-
-        //左クリックで発射
-        if (Input.GetMouseButton(0) && !isInNoShootArea)
+        //移動処理
+        if (Input.GetKey(KeyCode.D) && sya == false)
         {
-
-
-            powerSlider.gameObject.SetActive(true);
-            chargeTimer += chargeSpeed * Time.unscaledDeltaTime;
-            currentPower=Mathf.PingPong(chargeTimer,maxPower);
-
+            //右への移動入力
+            MoveX = MoveSpeed;
         }
-        if(Input.GetMouseButtonUp(0)&&!isInNoShootArea)
+        else if (Input.GetKey(KeyCode.A) && sya == false)
         {
-          
-
-            Shoot(currentPower + 5);
-
-            chargeTimer = 0f;
-            currentPower = 0;//リセット
-
-            powerSlider.gameObject.SetActive(false);
+            MoveX = -MoveSpeed;
         }
-
-        float ratio = currentPower/maxPower;
-        
-        //
-        powerSlider.value = ratio;
-        float baseDamage;
-       if(ratio < 0.3f)
+        else
         {
-            fillImage.color = Color.green;
-            baseDamage = 1f;
+            MoveX = 0f;
         }
-       else  if (ratio < 0.7f)
+        //しゃがみ
+        if (Input.GetKey(KeyCode.LeftControl) && OnGround == true)
         {
-            fillImage.color = Color.cyan;
-            baseDamage = 3f;
+            sya = true;
+            Debug.Log("しゃがみ");
+            if (Input.GetKey(KeyCode.D))
+            {
+                //右への移動入力
+                MoveX = MoveSpeed / 2;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                MoveX = -MoveSpeed / 2;
+            }
         }
-        else if(ratio<0.95f)
+        else
         {
-            fillImage.color = Color.yellow;
-            baseDamage = 5f;
+            sya = false;
         }
-       else  
+        //ジャンプ
+        if (Input.GetKey(KeyCode.Space) && OnGround == true && isLadder == false)
         {
-            fillImage.color = Color.red;
-            baseDamage = 10f;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpspeed);
         }
-        damage = baseDamage + attackBonus;
 
-        //スローにしてみる処理
-        float targetTimeScale =
-            (Input.GetMouseButton(0) && !isInNoShootArea)
-            ? slowTimeScale
-            : 1f;
 
-        Time.timeScale = Mathf.Lerp
-            (Time.timeScale, 
-            targetTimeScale, 
-            Time.unscaledDeltaTime * slowSpeed);
+        rb.linearVelocity = new Vector2(MoveX, rb.linearVelocity.y);
 
-        Time.fixedDeltaTime=0.02f*Time.timeScale;
-
-        //カメラズーム
-        float targetSize =
-            (Input.GetMouseButton(0) && !isInNoShootArea)
-            ? zoomSize
-            : nomalSize;
-
-        mainCamera.orthographicSize = Mathf.Lerp
-            (mainCamera.orthographicSize,
-            targetSize,
-            Time.unscaledDeltaTime * zoomSpeed);
 
     }
-
-    //void Move()
-    //{
-    //    Vector2 pos=transform.position;
-        
-    //    //移動処理
-    //    if (Input.GetKey(KeyCode.D))
-    //    {
-    //        //右への移動入力
-    //        pos.x += moveSpeed * Time.deltaTime;
-    //    }
-    //    else if (Input.GetKey(KeyCode.A))
-    //    {
-    //        pos.x -= moveSpeed * Time.deltaTime;
-    //    }
-    //    transform.position = pos;
-    //}
-    void Aim()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //弓
-        //マウスのほうへ
-        Vector3 mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction=mousePos-transform.position;
-        float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        
-    }
-
-    void Shoot(float power)
-    {
-        //矢を生成
-        GameObject arrow = Instantiate(arrowPrefab,firePoint.position,firePoint.rotation);
-
-        //矢に発射方向の力を加える
-        Rigidbody2D rb=arrow.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.right*power,ForceMode2D.Impulse);
-
-        ShotTest shot =arrow.GetComponent<ShotTest>();
-
-        //
-        float ratio = currentPower / maxPower;
-
-        //
-        float finalDamage=Mathf.Lerp(1f,10f,ratio);
-
-        //
-        finalDamage=Mathf.Round(finalDamage);
-
-        //
-        finalDamage += attackBonus;
-
-
-        shot.damage = finalDamage;
-        Debug.Log("Arrow damage = " + finalDamage);
-    }
-
-    //エリアに入ったとき
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("NoShot"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            isInNoShootArea = true;
-            chargeTimer = 0f;
-            currentPower = 0;//リセット
-
-            powerSlider.gameObject.SetActive(false);
+            Debug.Log("床");
+            OnGround = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            OnGround = false;
         }
     }
 
-    //出たとき
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if(collision.CompareTag("NoShot"))
+
+        //Debug.Log("Trigger中");
+        if (other.CompareTag("Ladder"))
         {
-            isInNoShootArea = false;
+            isLadder = true;
+            rb.gravityScale = 0.0f;
+            //Debug.Log("Ladder接触");
+
+            // 上る
+            if (Input.GetKey(KeyCode.W))
+            {
+                Vector3 pos = transform.position;
+                pos.y += 0.1f;
+                transform.position = pos;
+            }
+
+            // 下る
+            if (Input.GetKey(KeyCode.S))
+            {
+                Vector3 pos = transform.position;
+                pos.y -= 0.1f;
+                transform.position = pos;
+            }
+            else
+            {
+                Vector3 pos = transform.position;
+                pos.x += 0.0f;
+                transform.position = pos;
+
+            }
+
+
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Ladder"))
+        {
+            MoveX = 0;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0.0f);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Ladder"))
+        {
+            rb.gravityScale = DefGravity;
+
+        }
+        isLadder = false;
+    }
+
+
+
+
+
+
+
+
+
+
 }

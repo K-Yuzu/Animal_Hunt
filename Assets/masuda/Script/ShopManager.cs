@@ -5,7 +5,7 @@ public class ShopManager : MonoBehaviour
     public static ShopManager instance;
 
     public PlayerMove player;
-    public ShotTest arrow;
+    public Arrow arrow;
 
     [System.Serializable]
     public class ShopItem
@@ -49,11 +49,11 @@ public class ShopManager : MonoBehaviour
         switch (item.statType)
         {
             case StatType.Speed:
-                player.moveSpeed += item.value;
+                player.MoveSpeed += item.value;
                 break;
 
             case StatType.Attack:
-                player.attackBonus+= item.value;
+                arrow.attackBonus+= item.value;
                 break;
         }
     }
