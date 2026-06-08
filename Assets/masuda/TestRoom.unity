@@ -1303,6 +1303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlantText: {fileID: 1498489643}
+--- !u!212 &921673031 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7429327682475451796, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+  m_PrefabInstance: {fileID: 7596684757206112184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952877535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,6 +3611,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTestOBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 3652077255939339479, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5125819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652077255939339479, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.47981644
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652077255939339479, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.2581866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652077255939339479, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.0183592
+      objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: zoomSize
       value: 13
@@ -3631,6 +3652,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 590371877}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 921673031}
+    - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 600970546}
@@ -3652,7 +3677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5448469111315425002, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5737828588028802734, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: jumpspeed

@@ -103,12 +103,12 @@ TextureImporter:
       name: player_yumi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1500
-        height: 1499
+        x: 411
+        y: 250
+        width: 983
+        height: 935
       alignment: 9
-      pivot: {x: 0.6195091, y: 0.4806073}
+      pivot: {x: 0.5209343, y: 0.53101283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
