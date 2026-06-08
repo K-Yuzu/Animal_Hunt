@@ -3835,6 +3835,10 @@ PrefabInstance:
       value: PlayerTestOBJ
       objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: maxPower
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: fillImage
       value: 
       objectReference: {fileID: 1936025067}
@@ -3842,6 +3846,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1794548075}
+    - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: chargeSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: powerSlider
       value: 
