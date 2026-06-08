@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9c99d4140e1cb9347867d123bfb33259
+guid: 367ff30e9741e1d43bced88474fa185b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6869109003187468410
-    second: boar_stop_0
+      213: 1036441965349758890
+    second: boar_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boar_stop_0
+      name: boar_1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 687c29571c50ca0a0800000000000000
-      internalID: -6869109003187468410
+      spriteID: aa7eaf6e97e226e00800000000000000
+      internalID: 1036441965349758890
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ffbad8a44eacc04459c3fc005dc5fc24
+    spriteID: 6195a2b80780cb04ea5635db9a05af03
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      boar_stop_0: -6869109003187468410
+      boar_1_0: 1036441965349758890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
