@@ -188,6 +188,8 @@ public class Arrow : MonoBehaviour
             currentPower = 0;//ƒŠƒZƒbƒg
 
             powerSlider.gameObject.SetActive(false);
+
+            Debug.Log("InNoShootArea");
         }
     }
 
