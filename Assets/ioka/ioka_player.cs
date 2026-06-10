@@ -29,14 +29,17 @@ public class ioka_Player : MonoBehaviour
         {
             //‰E‚Ö‚ÌˆÚ“®“ü—Í
             MoveX = MoveSpeed;
+            anim.SetBool("move", true);
         }
         else if (Input.GetKey(KeyCode.A)&&sya==false)
         {
             MoveX = -MoveSpeed;
+            anim.SetBool("move", true);
         }
         else
         {
             MoveX = 0f;
+            anim.SetBool("move", false);
         }
         //‚µ‚á‚ª‚Ý
       if (Input.GetKey(KeyCode.LeftControl) && OnGround == true)
