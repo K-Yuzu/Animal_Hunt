@@ -181,6 +181,7 @@ public class Arrow : MonoBehaviour
     //ƒGƒŠƒA‚É“ü‚Á‚½‚Æ‚«
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Trigger Enter : " + collision.name);
         if (collision.CompareTag("NoShot"))
         {
             isInNoShootArea = true;
