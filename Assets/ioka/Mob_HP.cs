@@ -15,6 +15,7 @@ public class Mob_HP : MonoBehaviour
     //HPƒo[
     public Slider hpSlider;
 
+    public GameObject dropPrefab;
     void Start()
     {
         currentHp = MobHP;
@@ -64,8 +65,12 @@ public class Mob_HP : MonoBehaviour
     //€–Sˆ—
     void Die()
     {
-
+        drop();
         hpSlider.gameObject.SetActive(false);
         Destroy(gameObject, 0.1f);
+    }
+    void drop()
+    {
+        Instantiate(dropPrefab, transform.position, Quaternion.identity);
     }
 }

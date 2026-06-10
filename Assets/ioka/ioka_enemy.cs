@@ -8,6 +8,7 @@ public class ioka_enemy : MonoBehaviour
     [SerializeField] private bigsensor bigsensor;
     [SerializeField] private Transform player;
     [SerializeField] private float moveSpeed = 10f;
+    public GameObject dropPrefab;
 
     public float speed = 3f;
 
@@ -92,5 +93,9 @@ public class ioka_enemy : MonoBehaviour
         {
             Vector2 walk=new Vector2(transform.position.x-transform.position.x, 0f).normalized;
         }
+    }
+    void drop()
+    {
+        Instantiate(dropPrefab, transform.position, Quaternion.identity);
     }
 }
