@@ -103,10 +103,10 @@ TextureImporter:
       name: player_move3_0
       rect:
         serializedVersion: 2
-        x: 515
-        y: 186
-        width: 634
-        height: 1128
+        x: 0
+        y: 0
+        width: 1500
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c9536a88e5dafff4ea47a72ceec3e052
     internalID: 0
     vertices: []
     indices: 

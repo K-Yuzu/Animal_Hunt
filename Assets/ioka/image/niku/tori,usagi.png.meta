@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 50baa46ddbd051c458976653df043933
+guid: a8413cd563c72ce47b5b30db64a92841
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1525525966958836370
-    second: player_stop2_0
+      213: 560278790940987489
+    second: tori,usagi_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_stop2_0
+      name: tori,usagi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1500
-        height: 1500
+        x: 163
+        y: 468
+        width: 1104
+        height: 752
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29a373cc8c1cb2510800000000000000
-      internalID: 1525525966958836370
+      spriteID: 1601935879286c700800000000000000
+      internalID: 560278790940987489
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e5d3deb794499cb429faf54075a96a49
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_stop2_0: 1525525966958836370
+      tori,usagi_0: 560278790940987489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
