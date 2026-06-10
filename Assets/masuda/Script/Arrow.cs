@@ -178,28 +178,16 @@ public class Arrow : MonoBehaviour
         Debug.Log("Arrow damage = " + finalDamage);
     }
 
-    //エリアに入ったとき
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void SetNoShootArea(bool value)
     {
-        Debug.Log("Trigger Enter : " + collision.name);
-        if (collision.CompareTag("NoShot"))
+        isInNoShootArea = value;
+
+        if(value)
         {
-            isInNoShootArea = true;
             chargeTimer = 0f;
-            currentPower = 0;//リセット
+            currentPower = 0f;
 
             powerSlider.gameObject.SetActive(false);
-
-            Debug.Log("InNoShootArea");
-        }
-    }
-
-    //出たとき
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("NoShot"))
-        {
-            isInNoShootArea = false;
         }
     }
 }
