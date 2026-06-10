@@ -3782,9 +3782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4645b9ebfd8cba245a40dc113006a790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefGravity: 1
-  MoveSpeed: 5
-  jumpspeed: 7
 --- !u!1001 &6189927629816831929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3928,11 +3925,15 @@ PrefabInstance:
       objectReference: {fileID: 590371877}
     - target: {fileID: 5737828588028802734, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: DefGravity
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
