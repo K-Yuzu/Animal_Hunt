@@ -43,6 +43,14 @@ public class Arrow : MonoBehaviour
     //UI開いている間動きを止める
     public bool cantMove = true;
 
+    //コライダー
+    BoxCollider2D col;
+
+    private void Start()
+    {
+        col = GetComponentInParent<BoxCollider2D>();
+    }
+
     private void Update()
     {
         //UIが開いている間
@@ -125,6 +133,7 @@ public class Arrow : MonoBehaviour
             targetSize,
             Time.unscaledDeltaTime * zoomSpeed);
 
+  
     }
     void Aim()
     {
@@ -140,11 +149,13 @@ public class Arrow : MonoBehaviour
 
         if(direction.x<0)
         {
-            playerSprite.flipX = true;    
+            playerSprite.flipX = true;
+            col.offset = new Vector2(-0.3f, col.offset.y);
         }
         else
         {
             playerSprite.flipX = false;
+            col.offset = new Vector2(0.3f, col.offset.y);
         }
       
 
