@@ -2191,8 +2191,8 @@ Transform:
   m_GameObject: {fileID: 1165213128}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.299999, y: -1.8442, z: 0}
-  m_LocalScale: {x: 4.2202997, y: 2.7035003, z: 1}
+  m_LocalPosition: {x: -6.9318, y: 1.058, z: 0}
+  m_LocalScale: {x: 12.956742, y: 8.5079155, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1931382885}
@@ -3156,7 +3156,7 @@ Transform:
   m_GameObject: {fileID: 1794548073}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 7.19, y: 2.87, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3221,6 +3221,7 @@ MonoBehaviour:
   playerTr: {fileID: 600970546}
   cameraMaxPos: {x: 1000, y: 30}
   cameraMinPos: {x: -5, y: 0}
+  offset: {x: 10, y: 5, z: 0}
 --- !u!1001 &1840022962
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -224,6 +224,7 @@ MonoBehaviour:
   currentHp: 0
   scoreValue: 100
   hpSlider: {fileID: 5789015420094057680}
+  dropPrefab: {fileID: 0}
 --- !u!1 &821095602884517920
 GameObject:
   m_ObjectHideFlags: 0
