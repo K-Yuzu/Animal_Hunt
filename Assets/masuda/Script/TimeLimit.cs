@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
@@ -37,6 +38,7 @@ public class TimeLimit : MonoBehaviour
     }
     void TimeUp()
     {
+        SceneManager.LoadScene("Result");
         TestPlayer.transform.position = new Vector3(0f, 0f, 0f);
     }
 
