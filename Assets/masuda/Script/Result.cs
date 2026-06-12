@@ -23,7 +23,7 @@ public class Result : MonoBehaviour
    IEnumerator ResultAnimation(int targetScore,int targetCoin)
     {
         int currentScore = 0;
-        int currentCoin = 0;
+      
         
         while(currentScore<targetScore)
         {
@@ -32,13 +32,38 @@ public class Result : MonoBehaviour
             if (currentScore >= targetScore) 
                 currentScore = targetScore;
 
-            currentCoin = currentScore / 10;
-            ResultText.text =
-            $"スコア : {currentScore}\n" +
-            $"獲得コイン : {currentCoin}";
+            
 
+            ResultText.text =
+            $"スコア : {currentScore}\n";
+            
             yield return new WaitForSeconds(0.02f);
+
+
+           
         }
+        yield return new WaitForSeconds(1f);
+
+        int currentCoin = 0;
+
+        while (currentCoin < targetCoin)
+        {
+            currentCoin += Mathf.CeilToInt(targetCoin / 30f);
+
+            if (currentCoin>targetCoin)
+            {
+                currentCoin = targetCoin;
+            }
+
+            ResultText.text =
+            $"スコア:{targetScore}\n" +
+          $"獲得コイン : {currentCoin}";
+
+            yield return new WaitForSeconds(0.03f);
+        }
+       
+
+       
 
         ResultText.text =
             $"スコア : {targetScore}\n" +

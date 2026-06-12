@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 980848965}
   - component: {fileID: 980848964}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score=Coin
+  m_text: 'Score
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb8b4c8596b10394b98d69ecc721c7e1, type: 2}
   m_sharedMaterial: {fileID: -5950701230219152055, guid: fb8b4c8596b10394b98d69ecc721c7e1, type: 2}
