@@ -18,7 +18,7 @@ public class Scene_Manager : MonoBehaviour
         }
         else if(objs.Length<=0)
         {
-            SceneManager.LoadScene("TITLE");
+            SceneManager.LoadScene("Result");
         }
     }
 }
