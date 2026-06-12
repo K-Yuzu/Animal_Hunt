@@ -28,4 +28,5 @@ public class bigsensor : MonoBehaviour
             playerDetected = false;
         }
     }
+
 }
