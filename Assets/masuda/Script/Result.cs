@@ -3,19 +3,23 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour
 {
     [SerializeField]
     public TMP_Text ResultText;
+
+    [SerializeField]
+    private GameObject nextBotton;
     void Start()
     {
+        nextBotton.SetActive(false);
+
         int score = PlayerPrefs.GetInt("ResultScore", 0);
 
         //スコア 1 point / x = コイン
         int coin = score / 10;
-
-        
 
         StartCoroutine(ResultAnimation(score, coin));
     }
@@ -61,12 +65,18 @@ public class Result : MonoBehaviour
 
             yield return new WaitForSeconds(0.03f);
         }
-       
-
-       
 
         ResultText.text =
             $"スコア : {targetScore}\n" +
             $"獲得コイン : {targetCoin}";
+
+        yield return new WaitForSeconds(1f);
+
+        nextBotton.SetActive(true);
+    }
+
+    public void OnClickBotton()
+    {
+        SceneManager.LoadScene("SafeZone");
     }
 }
