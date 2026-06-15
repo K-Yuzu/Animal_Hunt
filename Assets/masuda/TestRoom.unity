@@ -4546,7 +4546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: maxPower
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: fillImage
@@ -4558,7 +4558,7 @@ PrefabInstance:
       objectReference: {fileID: 1794548075}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: chargeSpeed
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: powerSlider
