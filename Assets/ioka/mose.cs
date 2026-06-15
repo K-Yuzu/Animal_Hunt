@@ -14,7 +14,7 @@ public class mose : MonoBehaviour
             Texture2D resizedCursor = ResizeTexture(cursorTexture, cursorWidth, cursorHeight);
 
             // カーソルの中心点（左上を起点にする場合は Vector2.zero）
-            Vector2 hotSpot = Vector2.zero;
+            Vector2 hotSpot = new Vector2(64, 64);
 
             // カーソルを変更
             Cursor.SetCursor(resizedCursor, hotSpot, CursorMode.ForceSoftware);
