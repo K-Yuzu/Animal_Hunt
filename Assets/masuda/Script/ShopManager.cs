@@ -33,7 +33,7 @@ public class ShopManager : MonoBehaviour
     {
         ShopItem item = items[index];
 
-        if (!ScoreManager.instance.UseScore(item.cost))
+        if (!ScoreManager.instance.UseCoin(item.cost))
         {
             Debug.Log("スコア不足");
             return;

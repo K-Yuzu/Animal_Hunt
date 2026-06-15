@@ -5,7 +5,11 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
+    //スコア
     public int score = 0;
+
+    //コイン
+    public int coin = 0;
 
     [SerializeField]
     public TMP_Text scoreText;
@@ -16,6 +20,9 @@ public class ScoreManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            //コインのプレイヤーデータを取得
+            coin = PlayerPrefs.GetInt("Coin", 0);
         }
         else
         {
@@ -35,15 +42,31 @@ public class ScoreManager : MonoBehaviour
      
     }
 
-    public bool UseScore(int amount)
+    public void AddCoin(int amount)
     {
-        if(score<amount)
+        coin += amount;
+
+        PlayerPrefs.SetInt("Coin", coin);
+        PlayerPrefs.Save();
+    }
+
+    public bool UseCoin(int amount)
+    {
+        if(coin<amount)
         {
             return false;
         }
 
-        score -= amount;
+  
+        coin -= amount;
+        
+        PlayerPrefs.SetInt("Coin", coin)
+;
+        PlayerPrefs.Save();
+
         UpdateUI();
+
+
 
         return true;
     }
