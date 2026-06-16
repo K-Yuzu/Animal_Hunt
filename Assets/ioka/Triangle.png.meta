@@ -124,7 +124,29 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Triangle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c52c5b580c9669f46b672b6a3fb02bf8
+      internalID: 472750257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape:
@@ -144,6 +166,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Triangle: 7482667652216324306
+      Triangle_0: 472750257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
