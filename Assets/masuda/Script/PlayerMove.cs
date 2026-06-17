@@ -97,7 +97,7 @@ public class PlayerMove : MonoBehaviour
         if (other.CompareTag("Ladder"))
         {
             isLadder = true;
-            rb.gravityScale = 0.0f;
+           rb.gravityScale = 0.0f;
             //Debug.Log("Ladderê⁄êG");
 
             // è„ÇÈ
