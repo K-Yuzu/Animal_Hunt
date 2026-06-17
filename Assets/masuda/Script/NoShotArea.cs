@@ -6,7 +6,7 @@ public class NoShotArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("NoShot"))
+        if (collision.CompareTag("Player"))
             {
             arrow.SetNoShootArea(true);
         }
@@ -14,7 +14,7 @@ public class NoShotArea : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("NoShot"))
+        if (collision.CompareTag("Player"))
         {
             arrow.SetNoShootArea(false);
         }

@@ -44,5 +44,9 @@ public class ShotTest : MonoBehaviour
         {
             Delete_obj();
         }
+        if (collision.gameObject.CompareTag("Plant"))
+        {
+            Delete_obj();
+        }
     }
 }
