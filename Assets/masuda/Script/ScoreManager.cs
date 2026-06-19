@@ -11,8 +11,12 @@ public class ScoreManager : MonoBehaviour
     //コイン
     public int coin = 0;
 
+    //スコアテキスト
     [SerializeField]
     public TMP_Text scoreText;
+
+    [SerializeField]
+    private TMP_Text coinText;
 
     private void Awake()
     {
@@ -34,6 +38,7 @@ public class ScoreManager : MonoBehaviour
     {
         UpdateUI();
     }
+
 
     public void AddScore(int point)
     {
@@ -73,6 +78,15 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        scoreText.text = "Score:" + score;
+
+        if (scoreText != null)
+        {
+            scoreText.text = $"Score : {score}";
+        }
+
+        if(coinText!=null)
+        {
+            coinText.text = $"Coin : {coin}";
+        }
     }
 }
