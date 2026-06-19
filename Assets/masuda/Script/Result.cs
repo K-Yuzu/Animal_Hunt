@@ -72,6 +72,8 @@ public class Result : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        ScoreManager.instance.AddCoin(targetCoin);
+
         nextBotton.SetActive(true);
     }
 

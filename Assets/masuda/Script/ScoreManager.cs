@@ -53,6 +53,8 @@ public class ScoreManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Coin", coin);
         PlayerPrefs.Save();
+
+        UpdateUI();
     }
 
     public bool UseCoin(int amount)
@@ -88,5 +90,13 @@ public class ScoreManager : MonoBehaviour
         {
             coinText.text = $"Coin : {coin}";
         }
+    }
+
+    public void SetUI(TMP_Text score,TMP_Text coin)
+    {
+        scoreText = score;
+        coinText = coin;
+
+        UpdateUI();
     }
 }
