@@ -11,7 +11,10 @@ public class ShopManager : MonoBehaviour
     public class ShopItem
     {
         public string itemName;
-        public int cost;
+
+        public int cost;        //âøäi
+        public float valueUp = 1.1f;
+        
         public StatType statType;
         public float value;
     }
@@ -40,6 +43,8 @@ public class ShopManager : MonoBehaviour
         }
 
         ApplyItem(item);
+
+        item.cost += Mathf.RoundToInt(item.cost * item.valueUp);
 
         Debug.Log(item.itemName + " çwì¸");
     }
