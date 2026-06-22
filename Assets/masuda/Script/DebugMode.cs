@@ -13,7 +13,7 @@ public class DebugMode : MonoBehaviour
             if(ScoreManager.instance !=null)
             {
                 ScoreManager.instance.AddCoin(addCoinAmount);
-                Debug.Log($"スコア +{addCoinAmount}");
+                Debug.Log($"コイン +{addCoinAmount}");
             }
         }
 

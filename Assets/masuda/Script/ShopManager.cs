@@ -46,6 +46,7 @@ public class ShopManager : MonoBehaviour
 
         item.cost += Mathf.RoundToInt(item.cost * item.valueUp);
 
+
         Debug.Log(item.itemName + " w“ü");
     }
 
