@@ -143,7 +143,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114827}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 437375380fba11e459d245361419a676, type: 3}
   m_Name: 
@@ -262,7 +262,7 @@ MonoBehaviour:
   score: 0
   coin: 0
   scoreText: {fileID: 0}
-  coinText: {fileID: 0}
+  coinText: {fileID: 1046237924}
 --- !u!4 &196537118
 Transform:
   m_ObjectHideFlags: 0
@@ -1499,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466896635198022844, guid: c808283b169e76d43a47993a8ee3d42d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4534853147059927246, guid: c808283b169e76d43a47993a8ee3d42d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
