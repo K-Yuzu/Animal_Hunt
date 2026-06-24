@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIPanel : MonoBehaviour
 {
@@ -190,5 +191,10 @@ public class UIPanel : MonoBehaviour
         ShopPanel.SetActive(true);
 
         StartCoroutine(SlidePanel(showPos));
+    }
+
+    public void SceneMove()
+    {
+        SceneManager.LoadScene("Map_ioka");
     }
 }
