@@ -17,6 +17,6 @@ public class Switch_scene: MonoBehaviour
 
     public void change_scene()
     {
-        SceneManager.LoadScene("TestRoom", LoadSceneMode.Single);
+        SceneManager.LoadScene("Map_ioka", LoadSceneMode.Single);
     }
 }
