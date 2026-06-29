@@ -52,6 +52,8 @@ public class Arrow : MonoBehaviour
     private void Start()
     {
         col = GetComponentInParent<BoxCollider2D>();
+        attackBonus = PlayerPrefs.GetFloat("Attack", 0f);
+        zoomStrange = PlayerPrefs.GetFloat("OutLook", 0f);
     }
 
     private void Update()
