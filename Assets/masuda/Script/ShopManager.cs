@@ -14,8 +14,10 @@ public class ShopManager : MonoBehaviour
     {
         player.MoveSpeed = PlayerPrefs.GetFloat("Speed", player.MoveSpeed);
         arrow.attackBonus = PlayerPrefs.GetFloat("Attack", arrow.attackBonus);
-     //   arrow.zoomStrange=PlayerPrefs.GetFloat("OutLook",arrow.zoomStrange);
+        arrow.zoomStrange=PlayerPrefs.GetFloat("OutLook",arrow.zoomStrange);
     }
+
+   
 
     [System.Serializable]
     public class ShopItem

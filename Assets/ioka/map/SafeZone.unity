@@ -464,6 +464,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5971552380945733999, guid: fffe90ef0a2bad5468a0a63c907c6d33, type: 3}
+      propertyPath: items.Array.data[0].itemName
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971552380945733999, guid: fffe90ef0a2bad5468a0a63c907c6d33, type: 3}
+      propertyPath: items.Array.data[1].itemName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971552380945733999, guid: fffe90ef0a2bad5468a0a63c907c6d33, type: 3}
       propertyPath: items.Array.data[2].itemName
       value: OutLook
       objectReference: {fileID: 0}
