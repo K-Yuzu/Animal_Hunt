@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIPanel : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
 
     public GameObject MenuPanel;
@@ -16,12 +16,10 @@ public class UIPanel : MonoBehaviour
 
     //プレイヤーの動きを止める
     public PlayerMove playerMove;
-    
-    //こんにちはテキスト
-    public GameObject HelloText;
 
-    //ショップUI
-    public GameObject ShopPanel;
+  
+
+  
 
     //パネルの初期位置
     private Vector2 hidePos = new Vector2(0, -1000);
@@ -32,15 +30,15 @@ public class UIPanel : MonoBehaviour
 
         Debug.Log("test");
         MenuPanel.SetActive(false);
-        ShopPanel.SetActive(false);
+     
         UIText.SetActive(false);
-        HelloText.SetActive(false);
+     
 
         panelRect.anchoredPosition = hidePos;
     }
 
     public enum UIType
-    { 
+    {
         Main,
         Shop
     }
@@ -53,12 +51,12 @@ public class UIPanel : MonoBehaviour
         {
             Debug.Log("右クリック検知");
             UIOpen();
-            
+
         }
         if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             UIClose();
-            
+
         }
     }
 
@@ -71,10 +69,10 @@ public class UIPanel : MonoBehaviour
 
         UIText.SetActive(false);
         MenuPanel.SetActive(true);
-        ShopPanel.SetActive(false);
+       
 
         //プレイヤーを止める
-        playerMove.cantMove = true;
+        playerMove.cantMove = false;
 
         Time.timeScale = 0f;
 
@@ -83,9 +81,9 @@ public class UIPanel : MonoBehaviour
     public void UIClose()
     {
         isOpen = false;
-        playerMove.cantMove = false;
+        playerMove.cantMove = true;
 
-      StartCoroutine(ClosePanel());
+        StartCoroutine(ClosePanel());
     }
 
     //UIを動かす処理
@@ -94,18 +92,18 @@ public class UIPanel : MonoBehaviour
         float duration = 0.3f;
         float time = 0;
 
-        Vector2 start=panelRect.anchoredPosition;
+        Vector2 start = panelRect.anchoredPosition;
 
-        while (time <　duration)
+        while (time < duration)
         {
             time += Time.unscaledDeltaTime;
 
             float t = time / duration;
 
-            t= Mathf.SmoothStep(0,1,t);
+            t = Mathf.SmoothStep(0, 1, t);
 
             panelRect.anchoredPosition =
-                Vector2.Lerp(start,target,time/0.3f);
+                Vector2.Lerp(start, target, time / 0.3f);
 
             yield return null;
         }
@@ -140,27 +138,13 @@ public class UIPanel : MonoBehaviour
 
         // 非表示
         MenuPanel.SetActive(false);
-        ShopPanel.SetActive(false);
+      
 
         Time.timeScale = 1f;
     }
 
 
-    //こんにちはテキスト処理
-    public void SayHello()
-    {
-        StartCoroutine(ShowHello());
-        UIClose();
-    }
-
-    IEnumerator ShowHello()
-    {
-        HelloText.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        HelloText.SetActive(false) ;
-    }
-
-
+   
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Hi!" + other.name);
@@ -182,17 +166,7 @@ public class UIPanel : MonoBehaviour
         }
     }
 
-    public void ShopOpen()
-    {
-        isOpen = true;
-
-        MenuPanel.SetActive(false);
-
-        ShopPanel.SetActive(true);
-
-        StartCoroutine(SlidePanel(showPos));
-    }
-
+    
     public void SceneMove()
     {
         SceneManager.LoadScene("Map_ioka");

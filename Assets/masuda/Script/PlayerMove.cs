@@ -21,11 +21,13 @@ public class PlayerMove : MonoBehaviour
     private float MoveY = 0.0f;
 
     //UIŠJ‚¢‚Ä‚¢‚éŠÔ“®‚«‚ðŽ~‚ß‚é
-    public bool cantMove = true;
+    public bool cantMove = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+;
     }
 
     private void Update()
@@ -143,14 +145,4 @@ public class PlayerMove : MonoBehaviour
         }
         isLadder = false;
     }
-
-
-
-
-
-
-
-
-
-
 }

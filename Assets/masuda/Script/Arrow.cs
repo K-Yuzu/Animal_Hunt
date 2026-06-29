@@ -40,6 +40,9 @@ public class Arrow : MonoBehaviour
     public float zoomSize = 4f;
     public float zoomSpeed = 5f;
 
+    //カメラ視野強化
+    public float zoomStrange;
+
     //UI開いている間動きを止める
     public bool cantMove = true;
 
@@ -125,7 +128,7 @@ public class Arrow : MonoBehaviour
         //カメラズーム
         float targetSize =
             (Input.GetMouseButton(0) && !isInNoShootArea)
-            ? zoomSize
+            ? zoomSize + zoomStrange
             : nomalSize;
 
         mainCamera.orthographicSize = Mathf.Lerp

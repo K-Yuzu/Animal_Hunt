@@ -3,9 +3,19 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
-
+    
     public PlayerMove player;
     public Arrow arrow;
+    public Arrow cameraOut;
+
+    [SerializeField] ShopUI shopUI;
+
+    private void Start()
+    {
+        player.MoveSpeed = PlayerPrefs.GetFloat("Speed", player.MoveSpeed);
+        arrow.attackBonus = PlayerPrefs.GetFloat("Attack", arrow.attackBonus);
+     //   arrow.zoomStrange=PlayerPrefs.GetFloat("OutLook",arrow.zoomStrange);
+    }
 
     [System.Serializable]
     public class ShopItem
@@ -22,7 +32,8 @@ public class ShopManager : MonoBehaviour
     public enum StatType
     {
         Speed,
-        Attack
+        Attack,
+       OutLook
     }
 
     public ShopItem[] items;
@@ -44,8 +55,9 @@ public class ShopManager : MonoBehaviour
 
         ApplyItem(item);
 
-        //item.cost += Mathf.RoundToInt(item.cost * item.valueUp);
+        item.cost += Mathf.RoundToInt(item.cost * item.valueUp);
 
+        shopUI.Refresh();
 
         Debug.Log(item.itemName + " çwì¸");
     }
@@ -54,13 +66,23 @@ public class ShopManager : MonoBehaviour
     {
         switch (item.statType)
         {
+            //à⁄ìÆë¨ìx
             case StatType.Speed:
                 player.MoveSpeed += item.value;
+                PlayerPrefs.SetFloat(item.itemName, player.MoveSpeed);
                 break;
-
+            //çUåÇóÕ
             case StatType.Attack:
                 arrow.attackBonus+= item.value;
+                PlayerPrefs.SetFloat (item.itemName, arrow.attackBonus);
                 break;
+          //ÉJÉÅÉâã≠âª
+            case StatType.OutLook:
+               arrow.zoomStrange+= item.value;
+                PlayerPrefs.SetFloat(item.itemName , arrow.zoomStrange);
+                break;
+
         }
+        PlayerPrefs.Save();
     }
 }

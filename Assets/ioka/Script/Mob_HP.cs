@@ -16,12 +16,21 @@ public class Mob_HP : MonoBehaviour
     public Slider hpSlider;
 
     public GameObject dropPrefab;
+
+    //コライダー
+    public Collider2D colider;
+
+    //
+    private Rigidbody2D rb;
     void Start()
     {
         currentHp = MobHP;
 
         hpSlider.maxValue = MobHP;
         hpSlider.value = currentHp;
+
+        colider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     //矢のコライダー判定
@@ -67,7 +76,10 @@ public class Mob_HP : MonoBehaviour
     {
         drop();
         hpSlider.gameObject.SetActive(false);
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject,0.3f);
+        colider.enabled=false;
+
+        rb.constraints = RigidbodyConstraints2D.FreezeAll; ;
     }
     void drop()
     {
