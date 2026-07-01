@@ -2327,21 +2327,9 @@ PrefabInstance:
       value: PlayerTestOBJ
       objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: zoomSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: fillImage
       value: 
       objectReference: {fileID: 1921620151}
-    - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: nomalSize
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
       propertyPath: mainCamera
       value: 
@@ -2350,26 +2338,6 @@ PrefabInstance:
       propertyPath: powerSlider
       value: 
       objectReference: {fileID: 1766654666}
-    - target: {fileID: 5448469111315425002, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2068788577495265905, guid: 0913a15a4d084c74788abbaafce9165a, type: 3}
-    - target: {fileID: 5597561521959603103, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737828588028802734, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7429327682475451796, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2068788577495265905, guid: 0913a15a4d084c74788abbaafce9165a, type: 3}
-    - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
-      propertyPath: MoveSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

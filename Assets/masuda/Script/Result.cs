@@ -56,7 +56,7 @@ public class Result : MonoBehaviour
 
             if (currentCoin>targetCoin)
             {
-                currentCoin = targetCoin;
+                currentCoin += targetCoin;
             }
 
             ResultText.text =

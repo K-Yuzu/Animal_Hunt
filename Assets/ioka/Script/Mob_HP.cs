@@ -67,11 +67,8 @@ public class Mob_HP : MonoBehaviour
             float overDamage=Mathf.Abs(currentHp);
 
             int finalScore=scoreValue-Mathf.RoundToInt(overDamage);
-
             //マイナスにならないように
-            finalScore=Mathf.Max(0, finalScore);
-
-            finalScore /= Hit_dame;
+            finalScore =Mathf.Max(0, finalScore);
 
             ScoreManager.instance.AddScore(finalScore);//スコアを加算
 
