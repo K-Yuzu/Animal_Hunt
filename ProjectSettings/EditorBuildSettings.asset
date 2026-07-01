@@ -9,19 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/ioka/TITLE.unity
+    path: Assets/map/TITLE.unity
     guid: e898d285a738eca42ab96122a686c181
   - enabled: 0
     path: Assets/masuda/TestRoom.unity
     guid: 18198e66519d6c14caa820789a886c1f
   - enabled: 1
-    path: Assets/ioka/map/Map_ioka.unity
+    path: Assets/map/Map_ioka.unity
     guid: ead785cb7c1ba634aba44facd3394812
   - enabled: 1
-    path: Assets/ioka/map/Result.unity
+    path: Assets/map/Result.unity
     guid: 2578482cc1ff8d645b11f1ef3485ba4a
   - enabled: 1
-    path: Assets/ioka/map/SafeZone.unity
+    path: Assets/map/SafeZone.unity
     guid: d3c82795fc9260347a41067db22e25fd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

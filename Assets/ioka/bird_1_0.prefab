@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1041475930608830850}
   - component: {fileID: 1392755923963197073}
   - component: {fileID: 1511498336916775870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bird_1_0
   m_TagString: Mob
   m_Icon: {fileID: 0}
@@ -494,6 +494,7 @@ MonoBehaviour:
   scoreValue: 0
   hpSlider: {fileID: 0}
   dropPrefab: {fileID: 0}
+  colider: {fileID: 0}
 --- !u!1 &7731909263378190768
 GameObject:
   m_ObjectHideFlags: 0

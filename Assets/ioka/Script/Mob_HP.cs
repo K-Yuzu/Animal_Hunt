@@ -20,6 +20,9 @@ public class Mob_HP : MonoBehaviour
     //コライダー
     public Collider2D colider;
 
+    //攻撃ヒット回数
+    private int Hit_dame = 0;
+
     //
     private Rigidbody2D rb;
     void Start()
@@ -39,6 +42,9 @@ public class Mob_HP : MonoBehaviour
        
         if (collision.gameObject.CompareTag("Attack"))
         {
+            //ヒット回数を加算
+            Hit_dame++;
+            
             ShotTest shotTest = collision.gameObject.GetComponent<ShotTest>();
 
             if (shotTest != null)
@@ -65,7 +71,9 @@ public class Mob_HP : MonoBehaviour
             //マイナスにならないように
             finalScore=Mathf.Max(0, finalScore);
 
-            ScoreManager.instance.AddScore(finalScore);
+            finalScore /= Hit_dame;
+
+            ScoreManager.instance.AddScore(finalScore);//スコアを加算
 
             Die();
         }
