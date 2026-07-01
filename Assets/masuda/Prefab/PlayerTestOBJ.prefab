@@ -125,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8480886591838158099, guid: 98c66a49db5b41a48b3047c3771dbb11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   nomalSize: 10
   zoomSize: 13
   zoomSpeed: 5
+  zoomStrange: 0
   cantMove: 1
 --- !u!1 &6592790339713758310
 GameObject:
