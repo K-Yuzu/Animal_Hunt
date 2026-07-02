@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd0597c6d1a7274099309eca0fb70a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 1000
+  score: 0
   coin: 0
   scoreText: {fileID: 0}
   coinText: {fileID: 0}
