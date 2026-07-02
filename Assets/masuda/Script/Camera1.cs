@@ -9,9 +9,12 @@ public class Camera1 : MonoBehaviour
     [SerializeField] Transform playerTr;
     [SerializeField] Vector2 cameraMaxPos = new Vector2(5, 5);//âEÇ∆è„ÇÃå¿äEì_
     [SerializeField] Vector2 cameraMinPos = new Vector2(-5, -5);//ç∂Ç∆ÇµÇΩÇÃå¿äEì_
-    [SerializeField] Vector3 offset = new Vector3(100f, 100f, 0f); 
+    [SerializeField] Vector3 offset = new Vector3(100f, 100f, 0f);
 
-
+    private void Start()
+    {
+        playerTr=GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void Update()
     {
         Vector3 targetPos = playerTr.position + offset;

@@ -12,7 +12,8 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
-        player.MoveSpeed = PlayerPrefs.GetFloat("Speed", player.MoveSpeed);
+        //player.MoveSpeed = PlayerPrefs.GetFloat("Speed", player.MoveSpeed);
+        
         arrow.attackBonus = PlayerPrefs.GetFloat("Attack", arrow.attackBonus);
         arrow.zoomStrange=PlayerPrefs.GetFloat("OutLook",arrow.zoomStrange);
     }
@@ -70,8 +71,8 @@ public class ShopManager : MonoBehaviour
         {
             //à⁄ìÆë¨ìx
             case StatType.Speed:
-                player.MoveSpeed += item.value;
-                PlayerPrefs.SetFloat(item.itemName, player.MoveSpeed);
+                GameManager.Instance.MoveSpeed += item.value;
+                player.MoveSpeed = GameManager.Instance.MoveSpeed;
                 break;
             //çUåÇóÕ
             case StatType.Attack:
@@ -80,11 +81,11 @@ public class ShopManager : MonoBehaviour
                 break;
           //ÉJÉÅÉâã≠âª
             case StatType.OutLook:
-               arrow.zoomStrange+= item.value;
-                PlayerPrefs.SetFloat(item.itemName , arrow.zoomStrange);
+                GameManager.Instance.zoom += item.value;
+                arrow.zoomStrange=GameManager.Instance.zoom;
                 break;
 
         }
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
     }
 }

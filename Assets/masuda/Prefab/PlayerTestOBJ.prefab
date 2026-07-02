@@ -307,8 +307,8 @@ MonoBehaviour:
   slowTimeScale: 0.05
   slowSpeed: 6
   mainCamera: {fileID: 0}
-  nomalSize: 10
-  zoomSize: 10
+  nomalSize: 7
+  zoomSize: 7
   zoomSpeed: 5
   zoomStrange: 0
   cantMove: 1
