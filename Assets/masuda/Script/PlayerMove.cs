@@ -20,6 +20,8 @@ public class PlayerMove : MonoBehaviour
     private float MoveX = 0.0f;
     private float MoveY = 0.0f;
 
+    public static PlayerMove Instance;
+
     //UIŠJ‚¢‚Ä‚¢‚éŠÔ“®‚«‚ðŽ~‚ß‚é
     public bool cantMove = false;
     private void Start()
@@ -28,7 +30,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        MoveSpeed = PlayerPrefs.GetFloat("Speed", MoveSpeed);
+        MoveSpeed = GameManager.Instance.MoveSpeed;
     }
 
     private void Update()
