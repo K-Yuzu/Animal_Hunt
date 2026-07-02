@@ -39,6 +39,10 @@ public class TimeLimit : MonoBehaviour
     void TimeUp()
     {
         PlayerPrefs.SetInt("ResultScore", ScoreManager.instance.score);
+        PlayerPrefs.Save();
+
+        
+        
         SceneManager.LoadScene("Result");
         //TestPlayer.transform.position = new Vector3(0f, 0f, 0f);
     }

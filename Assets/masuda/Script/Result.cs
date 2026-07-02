@@ -17,6 +17,7 @@ public class Result : MonoBehaviour
         nextBotton.SetActive(false);
 
         int score = PlayerPrefs.GetInt("ResultScore", 0);
+        Debug.Log($"ResultScore = {score}");
 
         //スコア 1 point / x = コイン
         int coin = score / 10;
