@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     public bool cantMove = false;
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+       // PlayerPrefs.DeleteAll();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
