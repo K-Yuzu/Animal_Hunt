@@ -78,6 +78,24 @@ public class ScoreManager : MonoBehaviour
         return true;
     }
 
+    //Test:スコアをコインに変換する
+    public bool ExChangeScoreToCoin(int scoreCost,int coinAmount)
+    {
+        if(score < scoreCost)
+        {
+            return false;
+        }
+
+        score-= scoreCost;
+        coin += coinAmount;
+
+        PlayerPrefs.SetInt("Coin", coin);
+        PlayerPrefs.Save();
+
+        UpdateUI();
+
+        return true;
+    }
     private void UpdateUI()
     {
 
