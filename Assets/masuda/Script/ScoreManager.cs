@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
             //コインのプレイヤーデータを取得
             coin = PlayerPrefs.GetInt("Coin", 0);
