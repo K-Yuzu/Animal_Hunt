@@ -729,7 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTr: {fileID: 1283373495}
   cameraMaxPos: {x: 500, y: 10}
-  cameraMinPos: {x: -100, y: 2}
+  cameraMinPos: {x: -100, y: -30}
   offset: {x: 10, y: 5, z: 0}
 --- !u!1001 &138982310
 PrefabInstance:
@@ -2883,6 +2883,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1850417963}
+    - target: {fileID: 7656909923982159797, guid: abd2dc9d9cfe48745bd1a7b80bd7fa2d, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
