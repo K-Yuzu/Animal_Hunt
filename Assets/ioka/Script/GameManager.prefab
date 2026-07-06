@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 369018641597304146}
   - component: {fileID: 499064230210660998}
+  - component: {fileID: 7688878017661765349}
+  - component: {fileID: 5596637924820012391}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,3 +48,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   zoom: 1
+--- !u!114 &7688878017661765349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323361183042174889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aceb085758f2cd4daa47dcea8fc86f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boar: 0
+  bird: 0
+--- !u!114 &5596637924820012391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323361183042174889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681548a0093989a43873675664dac1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}

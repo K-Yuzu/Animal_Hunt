@@ -25,6 +25,9 @@ public class Mob_HP : MonoBehaviour
 
     //
     private Rigidbody2D rb;
+
+    public string ItemDrop;
+    public int Amout = 1;
     void Start()
     {
         currentHp = MobHP;
@@ -79,6 +82,7 @@ public class Mob_HP : MonoBehaviour
     //éÄñSèàóù
     void Die()
     {
+        inventory.Instance.addboar(ItemDrop,Amout);
         drop();
         hpSlider.gameObject.SetActive(false);
         Destroy(gameObject,0.3f);
