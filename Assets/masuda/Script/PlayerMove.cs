@@ -26,7 +26,9 @@ public class PlayerMove : MonoBehaviour
     public bool cantMove = false;
     private void Start()
     {
-       // PlayerPrefs.DeleteAll();
+        Debug.Log(cantMove);
+
+        // PlayerPrefs.DeleteAll();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -35,6 +37,14 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+       
+        if (cantMove)
+        {
+            MoveX = 0;
+            rb.linearVelocity=Vector2.zero;
+            return;
+        }
+
         //ˆÚ“®ˆ—
         if (Input.GetKey(KeyCode.D) && sya == false)
         {

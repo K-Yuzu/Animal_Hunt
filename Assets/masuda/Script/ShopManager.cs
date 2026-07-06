@@ -14,8 +14,12 @@ public class ShopManager : MonoBehaviour
     {
         //player.MoveSpeed = PlayerPrefs.GetFloat("Speed", player.MoveSpeed);
         
+        
+
         arrow.attackBonus = PlayerPrefs.GetFloat("Attack", arrow.attackBonus);
         arrow.zoomStrange=PlayerPrefs.GetFloat("OutLook",arrow.zoomStrange);
+
+        Debug.Log(items[0].cost);
     }
 
    
@@ -36,7 +40,7 @@ public class ShopManager : MonoBehaviour
     {
         Speed,
         Attack,
-       OutLook
+        OutLook
     }
 
     public ShopItem[] items;
@@ -44,6 +48,15 @@ public class ShopManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        //保存されたコストを呼び出し
+        for (int i = 0; i < items.Length; i++)
+        {
+            items[i].cost = PlayerPrefs.GetInt(
+                items[i].itemName + "_Cost",
+                items[i].cost);
+        }
+
     }
 
     public void BuyItem(int index)
@@ -59,6 +72,9 @@ public class ShopManager : MonoBehaviour
         ApplyItem(item);
 
         item.cost += Mathf.RoundToInt(item.cost * item.valueUp);
+
+        PlayerPrefs.SetInt(item.itemName + "_Cost", item.cost);
+        PlayerPrefs.Save();
 
         shopUI.Refresh();
 
