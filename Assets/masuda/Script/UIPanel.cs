@@ -73,6 +73,9 @@ public class UIPanel : MonoBehaviour
         MenuPanel.SetActive(true);
         ShopPanel.SetActive(false);
 
+        //UIが開かれたことをカウント
+        UIManager.Instance.UIOpened();
+
         //プレイヤーを止める
         playerMove.cantMove = true;
 
@@ -84,6 +87,7 @@ public class UIPanel : MonoBehaviour
     {
         isOpen = false;
         playerMove.cantMove = false;
+        UIManager.Instance.UIClosed();
 
       StartCoroutine(ClosePanel());
     }
