@@ -2518,6 +2518,10 @@ PrefabInstance:
       propertyPath: powerSlider
       value: 
       objectReference: {fileID: 1766654666}
+    - target: {fileID: 9073361564556481935, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
+      propertyPath: cantMove
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
