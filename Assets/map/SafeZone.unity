@@ -1879,6 +1879,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1097892942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902448527975827104, guid: c808283b169e76d43a47993a8ee3d42d, type: 3}
+  m_PrefabInstance: {fileID: 2085289101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1102740584 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3831863997407174526, guid: 941b6cb16b77dcf4e925dd2544953e65, type: 3}
@@ -2068,6 +2073,52 @@ MonoBehaviour:
   UIText: {fileID: 2091663769}
   panelRect: {fileID: 55587735}
   playerMove: {fileID: 1263002067}
+--- !u!1 &1356169784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356169786}
+  - component: {fileID: 1356169785}
+  m_Layer: 0
+  m_Name: PauseUIManu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1356169785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356169784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6681770b6e363bf4c9572c68ee61d267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseManu: {fileID: 1097892942}
+  uiManager: {fileID: 1797825536}
+--- !u!4 &1356169786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356169784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.596322, y: 0.5952555, z: -0.16454947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1474955000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,6 +3475,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UIClose
       objectReference: {fileID: 0}
+    - target: {fileID: 1902448527975827104, guid: c808283b169e76d43a47993a8ee3d42d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1961511902792713883, guid: c808283b169e76d43a47993a8ee3d42d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -3936,3 +3991,4 @@ SceneRoots:
   - {fileID: 727904770}
   - {fileID: 1088034175}
   - {fileID: 1797825537}
+  - {fileID: 1356169786}
