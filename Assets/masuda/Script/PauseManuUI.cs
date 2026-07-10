@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManuUI : MonoBehaviour
 {
@@ -40,5 +41,20 @@ public class PauseManuUI : MonoBehaviour
         pauseManu.SetActive(false);
         UIManager.Instance.UIClosed();
         Time.timeScale = 1.0f;
+    }
+
+    public void BackTitle()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("TITLE");
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1.0f;
+        Application.Quit();
+
+        //エディター確認用
+        Debug.Log("ゲーム終了");
     }
 }
