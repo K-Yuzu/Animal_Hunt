@@ -82,7 +82,7 @@ public class Mob_HP : MonoBehaviour
     //€–Sˆ—
     void Die()
     {
-        inventory.Instance.addboar(ItemDrop,Amout);
+        inventory.Instance.addItem(ItemDrop,Amout);
         drop();
         hpSlider.gameObject.SetActive(false);
         Destroy(gameObject,0.3f);

@@ -5,10 +5,16 @@ public class inventoryUI : MonoBehaviour
 {
     public TMP_Text boarText;
     public TMP_Text birdText;
+    public TMP_Text appleText;
+    public TMP_Text mushroomText;
+
 
     // Update is called once per frame
     void Update()
     {
         boarText.text = "イノシシ："+inventory.Instance.boar;
+        birdText.text = "鳥："      +inventory.Instance.bird;
+        appleText.text="りんご："   +inventory.Instance.apple;
+        mushroomText.text="きんこ："+inventory.Instance.mushroom;
     }
 }

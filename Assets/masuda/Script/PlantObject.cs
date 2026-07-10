@@ -6,6 +6,10 @@ public class Plant : MonoBehaviour
     private bool isPlayerNearby = false;
     private int point = 10;
 
+    //インベントリ用
+    public string ItemDrop;
+    public int Amout = 1;
+
     private void Start()
     {
         
@@ -25,6 +29,7 @@ public class Plant : MonoBehaviour
 
     void Plants()
     {
+        inventory.Instance.addItem(ItemDrop, Amout);
         //テキストとオブジェクトの削除
         //確認用
         Debug.Log("採取した");
