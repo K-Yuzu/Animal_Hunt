@@ -12,8 +12,10 @@ public class PauseManuUI : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Escape))
         {
             //‚Ù‚©‚ÌUI‚ªŠJ‚¢‚Ä‚¢‚é‚È‚ç
-            if (uiManager.) 
+            if (uiManager)
             {
+
+            }
         }
     }
 }
