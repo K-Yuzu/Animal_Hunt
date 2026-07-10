@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlantText: {fileID: 0}
+  ItemDrop: mushroom
+  Amout: 1

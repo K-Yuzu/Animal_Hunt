@@ -7,6 +7,9 @@ public class AppleFall : MonoBehaviour
     [SerializeField]
     private int scoreValue = 100;
 
+    public string ItemDrop;
+    public int Amout = 1;
+
     private void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -25,6 +28,7 @@ public class AppleFall : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ground"))
         {
+            inventory.Instance.addItem(ItemDrop, Amout);
             //ÉXÉRÉA
             ScoreManager.instance.AddScore(scoreValue);
 
