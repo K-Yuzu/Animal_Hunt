@@ -45,8 +45,9 @@ public class PauseManuUI : MonoBehaviour
 
     public void BackTitle()
     {
+        Debug.Log("ƒ^ƒCƒgƒ‹");
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("TITLE");
+        FadeManager.Instance.LoadScene("TITLE",1.0f);
     }
 
     public void QuitGame()
