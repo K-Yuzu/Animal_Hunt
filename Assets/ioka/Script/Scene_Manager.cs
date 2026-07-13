@@ -6,6 +6,12 @@ public class Scene_Manager : MonoBehaviour
     public float delay = 0.2f;//ƒV[ƒ“ˆÚs‚Ì—P—\
     private float timer = 0f;
 
+    private bool isLoding = false;
+
+
+    //“G‚Ì”
+    public int enemyCount;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +34,8 @@ public class Scene_Manager : MonoBehaviour
 
             timer += Time.deltaTime;
             if(timer > delay)
-            SceneManager.LoadScene("Result");
+                SceneManager.LoadScene("Result");
+            //FadeManager.Instance.LoadScene("Result",1.0f);
         }
     }
 }

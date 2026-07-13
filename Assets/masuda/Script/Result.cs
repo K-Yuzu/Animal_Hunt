@@ -28,9 +28,10 @@ public class Result : MonoBehaviour
    IEnumerator ResultAnimation(int targetScore,int targetCoin)
     {
         int currentScore = 0;
-      
-        
-        while(currentScore<targetScore)
+
+        yield return new WaitForSeconds(2f);
+
+        while (currentScore<targetScore)
         {
             currentScore += Mathf.CeilToInt(targetScore / 50f);
 
@@ -80,6 +81,6 @@ public class Result : MonoBehaviour
 
     public void OnClickBotton()
     {
-        SceneManager.LoadScene("SafeZone");
+        FadeManager.Instance.LoadScene("SafeZone",1.0f);
     }
 }

@@ -169,6 +169,6 @@ public class SceneChanger : MonoBehaviour
     
     public void SceneMove()
     {
-        SceneManager.LoadScene("Map_ioka");
+        FadeManager.Instance.LoadScene("Map_ioka",1.0f);
     }
 }

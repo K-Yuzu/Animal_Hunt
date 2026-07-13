@@ -17,6 +17,6 @@ public class Switch_scene: MonoBehaviour
 
     public void change_scene()
     {
-        SceneManager.LoadScene("SafeZone", LoadSceneMode.Single);
+        FadeManager.Instance.LoadScene("SafeZone", 1.0f);
     }
 }
