@@ -15,6 +15,6 @@ public class inventoryUI : MonoBehaviour
         boarText.text = "イノシシ："+inventory.Instance.boar;
         birdText.text = "鳥："      +inventory.Instance.bird;
         appleText.text="りんご："   +inventory.Instance.apple;
-        mushroomText.text="きんこ："+inventory.Instance.mushroom;
+        mushroomText.text="きのこ："+inventory.Instance.mushroom;
     }
 }
