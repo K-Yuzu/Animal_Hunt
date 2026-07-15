@@ -29,6 +29,14 @@ public class DebugMode : MonoBehaviour
                 Debug.Log($"スコア +{addScoreAmount}");
             }
         }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+           
+                
+                Debug.Log($"スコア +{addScoreAmount}");
+            
+        }
+
 
         //if (Input.GetKey(KeyCode.R))
         //{

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
@@ -26,16 +27,23 @@ public class Scene_Manager : MonoBehaviour
         {
             Debug.Log("“GŠ´’m");
         }
-        else if(objs.Length<=0)
+        else if(objs.Length==0&&!isLoding)
         {
+            isLoding = true;
             //•Û‘¶
             PlayerPrefs.SetInt("ResultScore",ScoreManager.instance.score);
             PlayerPrefs.Save();
 
-            timer += Time.deltaTime;
-            if(timer > delay)
-                SceneManager.LoadScene("Result");
-            //FadeManager.Instance.LoadScene("Result",1.0f);
-        }
+            StartCoroutine(LoadResult());
+
+           // timer += Time.deltaTime;
+           }
+    }
+
+    IEnumerator LoadResult()
+    {
+        yield return new WaitForSeconds(delay);
+        FadeManager.Instance.LoadScene("Result", 1.0f);
+
     }
 }

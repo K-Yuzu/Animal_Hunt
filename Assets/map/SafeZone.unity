@@ -2681,7 +2681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1552693597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2912,17 +2912,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1707467622 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6034097371441359916, guid: 932c9a81f49146d45836760c35e79b20, type: 3}
-  m_PrefabInstance: {fileID: 274340826693957970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1708524984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4640,9 +4629,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2029271163232931874, guid: 9690bc634c3ab104e9f25a91c015740d, type: 3}
+      propertyPath: DebugMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029271163232931874, guid: 9690bc634c3ab104e9f25a91c015740d, type: 3}
       propertyPath: fadeImage
       value: 
-      objectReference: {fileID: 1707467622}
+      objectReference: {fileID: 0}
     - target: {fileID: 3411407230637568257, guid: 9690bc634c3ab104e9f25a91c015740d, type: 3}
       propertyPath: m_Name
       value: FadeOBJ
