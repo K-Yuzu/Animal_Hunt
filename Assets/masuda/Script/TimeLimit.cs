@@ -42,8 +42,7 @@ public class TimeLimit : MonoBehaviour
         PlayerPrefs.Save();
 
         
-        
-        SceneManager.LoadScene("Result");
+        FadeManager.Instance.LoadScene("Result",1.0f);
         //TestPlayer.transform.position = new Vector3(0f, 0f, 0f);
     }
 
