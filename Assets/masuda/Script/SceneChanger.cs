@@ -72,7 +72,7 @@ public class SceneChanger : MonoBehaviour
        
 
         //ÉvÉåÉCÉÑÅ[Çé~ÇﬂÇÈ
-        playerMove.cantMove = false;
+        playerMove.cantMove = true;
 
         Time.timeScale = 0f;
 
@@ -81,7 +81,7 @@ public class SceneChanger : MonoBehaviour
     public void UIClose()
     {
         isOpen = false;
-        playerMove.cantMove = true;
+        playerMove.cantMove = false;
 
         StartCoroutine(ClosePanel());
     }
