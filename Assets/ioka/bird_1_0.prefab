@@ -491,9 +491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MobHP: 1
   currentHp: 0
-  scoreValue: 0
+  scoreValue: 50
   hpSlider: {fileID: 0}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 6701664213491538617, guid: caef586a253cecd448350181654b74ed, type: 3}
   colider: {fileID: 0}
   ItemDrop: bird
   Amout: 1

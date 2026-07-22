@@ -390,7 +390,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1897315779553297629, guid: 6a3d729fff57db6429fa6b0696031aff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -456,11 +456,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MobHP: 10
   currentHp: 0
-  scoreValue: 0
+  scoreValue: 150
   hpSlider: {fileID: 7259757997353310170}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 4131783379718235034, guid: 3ba6c1c5e7783424a8d737a5629f1983, type: 3}
   colider: {fileID: 0}
-  ItemDrop: 
+  ItemDrop: yagi
   Amout: 1
 --- !u!61 &3190437261681121516
 BoxCollider2D:

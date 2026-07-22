@@ -224,8 +224,10 @@ MonoBehaviour:
   currentHp: 0
   scoreValue: 100
   hpSlider: {fileID: 4137369882026664686}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 6143333642544238781, guid: 52bb83d13faeddd418375dae7337d156, type: 3}
   colider: {fileID: 0}
+  ItemDrop: inosisi
+  Amout: 1
 --- !u!1 &826495856014667481
 GameObject:
   m_ObjectHideFlags: 0

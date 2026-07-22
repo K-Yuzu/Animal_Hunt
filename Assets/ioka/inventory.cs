@@ -7,7 +7,7 @@ public class inventory : MonoBehaviour
     //“÷
     public int boar = 0;//‚¢‚Ì‚µ‚µ
     public int bird = 0;//‚Æ‚è
-
+    public int yagi = 0;//‚â‚¬
 
     //Ìæ•¨
     public int apple = 0;//ƒŠƒ“ƒS
@@ -39,6 +39,9 @@ public class inventory : MonoBehaviour
                 break;
             case "mushroom":
                 mushroom += amout;
+                break;
+            case "yagi":
+                yagi+= amout;
                 break;
 
                 default:

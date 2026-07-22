@@ -7,6 +7,7 @@ public class inventoryUI : MonoBehaviour
     public TMP_Text birdText;
     public TMP_Text appleText;
     public TMP_Text mushroomText;
+    public TMP_Text yagiText;
 
 
     // Update is called once per frame
@@ -16,5 +17,6 @@ public class inventoryUI : MonoBehaviour
         birdText.text = "íπÅF"      +inventory.Instance.bird;
         appleText.text="ÇËÇÒÇ≤ÅF"   +inventory.Instance.apple;
         mushroomText.text="Ç´ÇÃÇ±ÅF"+inventory.Instance.mushroom;
+        yagiText.text="Ç‚Ç¨ :"+ inventory.Instance.yagi;
     }
 }
