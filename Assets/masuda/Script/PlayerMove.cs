@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     private float MoveX = 0.0f;
     private float MoveY = 0.0f;
 
+
     public static PlayerMove Instance;
 
     //UIŠJ‚¢‚Ä‚¢‚éŠÔ“®‚«‚ðŽ~‚ß‚é

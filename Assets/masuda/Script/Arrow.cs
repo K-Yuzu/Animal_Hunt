@@ -49,6 +49,11 @@ public class Arrow : MonoBehaviour
     //コライダー
     BoxCollider2D col;
 
+    //Audio
+    
+    public AudioSource audioSource;
+    public AudioClip ArrowCharge;
+    public AudioClip ArrowShot;
     private void Start()
     {
         col = GetComponentInParent<BoxCollider2D>();
@@ -74,10 +79,13 @@ public class Arrow : MonoBehaviour
             chargeTimer += chargeSpeed * Time.unscaledDeltaTime;
             currentPower = Mathf.PingPong(chargeTimer, maxPower);
 
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(ArrowCharge);
+
+
         }
         if (Input.GetMouseButtonUp(0) && !isInNoShootArea)
         {
-
 
             Shoot(currentPower + 5);
 
@@ -85,6 +93,9 @@ public class Arrow : MonoBehaviour
             currentPower = 0;//リセット
 
             powerSlider.gameObject.SetActive(false);
+
+           // if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(ArrowShot);
         }
 
         float ratio = currentPower / maxPower;
@@ -150,9 +161,9 @@ public class Arrow : MonoBehaviour
         
         //弓のみ
         transform.rotation = Quaternion.Euler(0,0,angle);
-        
+       
 
-        if(direction.x<0)
+        if (direction.x<0)
         {
             playerSprite.flipX = true;
             col.offset = new Vector2(-0.3f, col.offset.y);
@@ -168,6 +179,8 @@ public class Arrow : MonoBehaviour
 
     void Shoot(float power)
     {
+       
+
         //矢を生成
         GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
 

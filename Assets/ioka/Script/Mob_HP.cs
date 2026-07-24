@@ -28,6 +28,10 @@ public class Mob_HP : MonoBehaviour
 
     public string ItemDrop;
     public int Amout = 1;
+
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip ArrowDamage;
     void Start()
     {
         currentHp = MobHP;
@@ -62,6 +66,9 @@ public class Mob_HP : MonoBehaviour
     {
         currentHp -= damage;
         hpSlider.value = currentHp;
+
+        if(!audioSource.isPlaying) 
+            audioSource.PlayOneShot(ArrowDamage);
 
         Debug.Log($"残りHP:{currentHp} 与えたダメージ:{damage}");
         
