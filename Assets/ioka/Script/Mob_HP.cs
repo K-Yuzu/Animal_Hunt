@@ -67,8 +67,7 @@ public class Mob_HP : MonoBehaviour
         currentHp -= damage;
         hpSlider.value = currentHp;
 
-        if(!audioSource.isPlaying) 
-            audioSource.PlayOneShot(ArrowDamage);
+       
 
         Debug.Log($"残りHP:{currentHp} 与えたダメージ:{damage}");
         
@@ -84,6 +83,8 @@ public class Mob_HP : MonoBehaviour
 
             Die();
         }
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(ArrowDamage);
     }
 
     //死亡処理
