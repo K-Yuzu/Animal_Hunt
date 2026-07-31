@@ -27,6 +27,11 @@ public class UIPanel : MonoBehaviour
     private Vector2 hidePos = new Vector2(0, -1000);
     private Vector2 showPos = new Vector2(0, 0);
 
+
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip kettei;
+    public AudioClip talk;
     private void Start()
     {
 
@@ -52,6 +57,9 @@ public class UIPanel : MonoBehaviour
         if (!isOpen && isPlayerNearby && Input.GetMouseButtonDown(1))
         {
             Debug.Log("右クリック検知");
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(kettei);
+
             UIOpen();
             
         }
@@ -153,6 +161,8 @@ public class UIPanel : MonoBehaviour
     //こんにちはテキスト処理
     public void SayHello()
     {
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(talk);
         StartCoroutine(ShowHello());
         UIClose();
     }
@@ -188,6 +198,9 @@ public class UIPanel : MonoBehaviour
 
     public void ShopOpen()
     {
+
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(kettei);
         isOpen = true;
 
         MenuPanel.SetActive(false);
@@ -199,6 +212,8 @@ public class UIPanel : MonoBehaviour
 
     public void SceneMove()
     {
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(kettei);
         SceneManager.LoadScene("Map_ioka");
     }
 }

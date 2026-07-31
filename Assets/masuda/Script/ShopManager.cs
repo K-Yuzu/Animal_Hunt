@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ShopManager : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class ShopManager : MonoBehaviour
     public PlayerMove player;
     public Arrow arrow;
     public Arrow cameraOut;
+
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip kettei;
 
     [SerializeField] ShopUI shopUI;
 
@@ -72,7 +77,8 @@ public class ShopManager : MonoBehaviour
         ApplyItem(item);
 
         item.cost += Mathf.RoundToInt(item.cost * item.valueUp);
-
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(kettei);
         PlayerPrefs.SetInt(item.itemName + "_Cost", item.cost);
         PlayerPrefs.Save();
 

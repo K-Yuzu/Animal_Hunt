@@ -25,6 +25,9 @@ public class SceneChanger : MonoBehaviour
     private Vector2 hidePos = new Vector2(0, -1000);
     private Vector2 showPos = new Vector2(0, 0);
 
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip kettei;
     private void Start()
     {
 
@@ -50,6 +53,9 @@ public class SceneChanger : MonoBehaviour
         if (!isOpen && isPlayerNearby && Input.GetMouseButtonDown(1))
         {
             Debug.Log("右クリック検知");
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(kettei);
+
             UIOpen();
 
         }
@@ -69,7 +75,10 @@ public class SceneChanger : MonoBehaviour
 
         UIText.SetActive(false);
         MenuPanel.SetActive(true);
-       
+
+
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(kettei);
 
         //プレイヤーを止める
         playerMove.cantMove = true;
